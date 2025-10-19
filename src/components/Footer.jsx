@@ -1,5 +1,4 @@
 const Footer = () => {
-  // Obtenemos el año actual dinámicamente
   const currentYear = new Date().getFullYear();
 
   return (
@@ -12,13 +11,13 @@ const Footer = () => {
 
         {/* Enlaces a Redes Sociales */}
         <div className="flex space-x-4">
-          <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
+          <a href="https://github.com/carlosmen351" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/carlosmen351/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
             LinkedIn
           </a>
-          <a href="https://twitter.com/tu-usuario" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
+          <a href="https://https//twitter.com/carlosmen351" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors duration-300">
             Twitter/X
           </a>
         </div>
