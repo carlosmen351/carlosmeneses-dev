@@ -43,7 +43,7 @@ const Home = () => {
           Desarrollador Frontend Creativo
         </h1>
         <p className="mt-4 text-xl text-slate-400">
-          Transformando ideas en experiencias web interactivas y memorables.
+          Creando experiencias de usurario intuitivas con React Lit y WebComponents.
         </p>
       </section>
 

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logoImage from '../assets/logo.png'
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,10 +9,6 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-sm py-6">
       <div className="container mx-auto flex justify-between items-center px-4">
-        {/* Logo o Nombre */}
-        <Link to="/" className="font-bold text-xl text-white z-50">
-          Carlos Meneses
-        </Link>
 
         {/* Links de Navegación para Escritorio (Desktop) */}
         <ul className="hidden md:flex items-center space-x-6">
