@@ -13,13 +13,13 @@ const myProjects = [
     projectState: 'En Desarrollo', // Nueva propiedad para indicar el estado
   },
   {
-    title: 'Plataforma de E-commerce v2',
-    description: 'Mejorando la experiencia de compra en línea con nuevas funcionalidades, un diseño más intuitivo y optimizaciones de rendimiento.',
-    tags: ['Vue.js', 'Nuxt.js', 'GraphQL'],
-    imageUrl: constuctionImage,
-    liveUrl: '#',
-    repoUrl: '#',
-    projectState: 'En Desarrollo',
+    title: 'Agnostic Design System',
+    description: 'Biblioteca de componentes UI escalable construida con arquitectura Monorepo. Separa la lógica de los componentes (Package) de la aplicación de consumo (Showcase), implementando TypeScript estricto y estándares web modernos.',
+    tags: ['LitElement', 'TypeScript', 'React (Vite)', 'Monorepo (pnpm)', 'Web Components', 'Tailwind CSS', 'SASS'],
+    imageUrl: constuctionImage, // TODO:
+    liveUrl: 'https://design.carlosmeneses.dev',
+    repoUrl: 'https://github.com/carlosmen351/design-system-camedev',
+    projectState: 'Live / MVP',
   },
   {
     title: 'Calculadora Financiera',
