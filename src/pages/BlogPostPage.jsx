@@ -17,13 +17,13 @@ const BlogPostPage = () => {
   return (
     <article className="prose prose-invert lg:prose-xl mx-auto">
       <h1
-      className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500'
+      className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent'
       >
         {post.title}
       </h1>
-      <p className="text-slate-400">{post.date}</p>
+      <p className="text-primary/70">{post.date}</p>
       <hr />
-      <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 animate-gradient-flow" style={{ backgroundSize: '400% 400%' }}>
+      <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-background via-secondary/40 to-background animate-gradient-flow" style={{ backgroundSize: '400% 400%' }}>
         <Content components={components} />
       </div>
     </article>

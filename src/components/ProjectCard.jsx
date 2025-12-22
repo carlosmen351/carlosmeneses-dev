@@ -5,21 +5,21 @@ import { motion } from 'framer-motion';
 const ProjectCard = ({ title, description, tags, imageUrl, liveUrl, repoUrl, projectState }) => {
   const isInProgress = projectState === 'En Construcción' || projectState === 'En Desarrollo';
   return (
-    <motion.div className="bg-slate-800 rounded-lg shadow-md p-6 flex flex-col h-full hover:shadow-cyan-500/30 transition-shadow">
+    <motion.div className="bg-background border border-primary/20 rounded-lg shadow-md p-6 flex flex-col h-full hover:shadow-primary/30 transition-shadow">
       <img src={imageUrl} alt={`Imagen del proyecto ${title}`} className="rounded-md mb-4 h-48 object-cover w-full" />
-      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+      <h3 className="text-xl font-bold mb-2 text-text">{title}</h3>
 
       {/* Mostramos el estado si está en progreso */}
       {isInProgress && (
-        <span className="bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded mb-2 inline-block">
+        <span className="bg-secondary text-text text-sm font-bold px-2.5 py-0.5 rounded mb-2 inline-block">
           {projectState}
         </span>
       )}
 
-      <p className="text-slate-300 mb-4 flex-grow">{description}</p>
+      <p className="text-text/80 mb-4 flex-grow">{description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
-          <span key={index} className="bg-slate-700 text-cyan-400 text-xs font-medium px-2.5 py-0.5 rounded">
+          <span key={index} className="bg-secondary/20 text-primary text-sm font-normal px-2.5 py-0.5 rounded">
             {tag}
           </span>
         ))}
@@ -29,7 +29,7 @@ const ProjectCard = ({ title, description, tags, imageUrl, liveUrl, repoUrl, pro
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300 ${isInProgress ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`bg-primary hover:bg-primary/80 text-background font-bold py-2 px-4 rounded transition-colors duration-300 ${isInProgress ? 'opacity-50 cursor-not-allowed' : ''}`}
           onClick={(e) => isInProgress && e.preventDefault()}
         >
           Live Demo
@@ -38,7 +38,7 @@ const ProjectCard = ({ title, description, tags, imageUrl, liveUrl, repoUrl, pro
           href={repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`bg-slate-700 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 ${isInProgress ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`bg-secondary/40 hover:bg-secondary/60 text-text font-bold py-2 px-4 rounded transition-colors duration-300 ${isInProgress ? 'opacity-50 cursor-not-allowed' : ''}`}
           onClick={(e) => isInProgress && e.preventDefault()}
         >
           GitHub

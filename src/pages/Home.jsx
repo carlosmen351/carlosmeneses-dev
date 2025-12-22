@@ -38,18 +38,18 @@ const Home = () => {
     <>
       {/* Sección Hero */}
       <section className="text-center mb-24">
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
+        <h1 className="text-5xl md:text-5xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
         >
           Desarrollador Frontend Creativo
         </h1>
-        <p className="mt-4 text-xl text-slate-400">
+        <p className="mt-4 text-xl text-primary/70">
           Creando experiencias de usurario intuitivas con React Lit y WebComponents.
         </p>
       </section>
 
       {/* Sección de Proyectos */}
       <section id="proyectos">
-        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-800">Mis Proyectos</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Mis Proyectos</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {myProjects.map((project) => (
             <ProjectCard

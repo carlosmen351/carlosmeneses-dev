@@ -8,7 +8,7 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="bg-slate-900 text-white min-h-screen">
+    <div className="bg-background text-text min-h-screen">
       <Navbar />
       <main className="container mx-auto px-4 py-12">
         <Routes>

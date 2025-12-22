@@ -28,7 +28,7 @@ const ContactPage = () => {
   }
   return (
     <section id="contacto" className="max-w-2xl mx-auto">
-    <h2 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-800">Hablemos</h2>
+    <h2 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Hablemos</h2>
     <form
       onSubmit={handleSubmit}
       action="https://formspree.io/f/xrbydawv"
@@ -36,20 +36,20 @@ const ContactPage = () => {
       className="space-y-6"
     >
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-300">Tu Email</label>
-        <input id="email" type="email" name="email" required className="mt-1 block w-full bg-slate-800 border border-slate-600 rounded-md py-2 px-3 text-white focus:ring-cyan-500 focus:border-cyan-500" />
+        <label htmlFor="email" className="block text-sm font-normal text-text/90">Tu Email</label>
+        <input id="email" type="email" name="email" required className="mt-1 block w-full bg-background border border-primary/30 rounded-md py-2 px-3 text-text focus:ring-primary focus:border-primary" />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-300">Mensaje</label>
-        <textarea id="message" name="message" rows="4" required className="mt-1 block w-full bg-slate-800 border border-slate-600 rounded-md py-2 px-3 text-white focus:ring-cyan-500 focus:border-cyan-500"></textarea>
+        <label htmlFor="message" className="block text-sm font-normal text-text/90">Mensaje</label>
+        <textarea id="message" name="message" rows="4" required className="mt-1 block w-full bg-background border border-primary/30 rounded-md py-2 px-3 text-text focus:ring-primary focus:border-primary"></textarea>
       </div>
       <div>
-        <button type="submit" className="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-3 px-4 rounded-md transition-colors duration-300">
+        <button type="submit" className="w-full bg-primary hover:bg-primary/80 text-background font-bold py-3 px-4 rounded-md transition-colors duration-300">
           Enviar Mensaje
         </button>
       </div>
     </form>
-    {status && <p className="mt-4 text-center text-slate-400">{status}</p>}
+    {status && <p className="mt-4 text-center text-primary/70">{status}</p>}
   </section>
   )
 };
