@@ -1,71 +1,186 @@
-// src/pages/Home.jsx
+import { useTranslation } from 'react-i18next';
+import { Typewriter } from 'react-simple-typewriter';
+import { FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaCode, FaSatellite, FaCoffee, FaJenkins, FaJira, FaLinux, FaGithub} from 'react-icons/fa';
+import { SiSass } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
-import constuctionImage from '../assets/inCosntruction.jpg'
+import Button from '../components/Button';
+import ProjectButton from '../components/ProjectButton'; // Import the new button
+import { myProjects } from '../lib/projects';
+import AnimatedSection from '../components/AnimatedSection';
+import ParticlesBackground from '../components/ParticlesBackground';
+import { homeParticlesOptions } from '../config/particles-config';
+import ReviewsSection from '../components/ReviewsSection';
 
-const myProjects = [
-  {
-    title: 'Proyecto Secreto X',
-    description: 'Un ambicioso proyecto que está tomando forma. Pronto revelaremos más detalles sobre sus innovadoras características y su impacto.',
-    tags: ['React', 'Next.js', 'Firebase'],
-    imageUrl: constuctionImage,
-    liveUrl: '#', // No hay demo aún
-    repoUrl: '#', // No hay repo público aún
-    projectState: 'En Desarrollo', // Nueva propiedad para indicar el estado
-  },
-  {
-    title: 'Agnostic Design System',
-    description: 'Biblioteca de componentes UI escalable construida con arquitectura Monorepo. Separa la lógica de los componentes (Package) de la aplicación de consumo (Showcase), implementando TypeScript estricto y estándares web modernos.',
-    tags: ['LitElement', 'TypeScript', 'React (Vite)', 'Monorepo (pnpm)', 'Web Components', 'Tailwind CSS', 'SASS'],
-    imageUrl: constuctionImage, // TODO:
-    liveUrl: 'https://design.carlosmeneses.dev',
-    repoUrl: 'https://github.com/carlosmen351/design-system-camedev',
-    projectState: 'Live / MVP',
-  },
-  {
-    title: 'Calculadora Financiera',
-    description: 'Una herramienta sencilla pero poderosa para gestionar presupuestos personales y proyecciones de inversión.',
-    tags: ['JavaScript', 'HTML', 'CSS'],
-    imageUrl: constuctionImage,
-    liveUrl: '#',
-    repoUrl: '#',
-    projectState: 'En Desarrollo', // Puedes añadir un estado a tus proyectos completados también
-  }
-];
-
+const GlowButton = ({ children, to }) => (
+  <motion.a
+    as={Link} // Usa el componente Link de React Router
+    to={to}    // Pasa la prop 'to' al Link
+    whileHover={{
+      scale: 1.05,
+      boxShadow: "0 0 20px rgba(255, 255, 255, 0.5)",
+      textShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
+    }}
+    transition={{ type: 'spring', stiffness: 300 }}
+    className="px-8 py-3 rounded-full bg-primary text-background font-bold uppercase tracking-wider"
+  >
+    {children}
+  </motion.a>
+);
 
 const Home = () => {
-  return (
-    <>
-      {/* Sección Hero */}
-      <section className="text-center mb-24">
-        <h1 className="text-5xl md:text-5xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
-        >
-          Desarrollador Frontend Creativo
-        </h1>
-        <p className="mt-4 text-xl text-primary/70">
-          Creando experiencias de usurario intuitivas con React Lit y WebComponents.
-        </p>
-      </section>
+  const { t } = useTranslation();
+  const typewriterWords = t('home.hero.typewriter', { returnObjects: true }) || [];
 
-      {/* Sección de Proyectos */}
-      <section id="proyectos">
-        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Mis Proyectos</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {myProjects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              imageUrl={project.imageUrl}
-              liveUrl={project.liveUrl}
-              repoUrl={project.repoUrl}
-              projectState={project.projectState}
+  const skillIcons = {
+    'JavaScript': <FaJsSquare />,
+    'React': <FaReact />,
+    'Node.js': <FaNodeJs />,
+    'Git': <FaGitAlt />,
+    'SASS': <SiSass />,
+    'Cells': <FaCode />,
+    'Lit Element': <FaSatellite />,
+    'Web Components': <FaCoffee />,
+    'Jenkins': <FaJenkins />,
+    'Jira': <FaJira />,
+    'Linux': <FaLinux />,
+    'GitHub': <FaGithub />
+  };
+  const skills = t('home.skills.list', { returnObjects: true }) || [];
+
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 50, rotateY: 0, rotateX: 0 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      y: 0,
+      rotateY: 0, // Asegura que la rotación se reinicie
+      rotateX: 0, // Asegura que la rotación se reinicie
+      transition: { type: "spring", damping: 15, stiffness: 100 }
+    },
+  };
+
+  return (
+    <div className="space-y-32 relative">
+      <ParticlesBackground options={homeParticlesOptions} className="z-0" /> {/* Added z-0 to ensure particles are in the background */}
+      {/* Hero Section */}
+      <AnimatedSection variants={sectionVariants}>
+        <div className="text-center flex flex-col items-center justify-center min-h-[80vh] relative overflow-hidden">
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl font-bold leading-tight text-text mb-4 z-10"
+          >
+            {t('home.hero.name')}
+          </motion.h1>
+          <motion.p
+            variants={itemVariants}
+            className="mt-2 text-2xl md:text-4xl text-primary font-heading z-10"
+          >
+            <Typewriter
+              words={typewriterWords}
+              loop={true}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
             />
-          ))}
+          </motion.p>
+          <motion.p
+            variants={itemVariants}
+            className="mt-6 max-w-2xl text-lg text-text/80 z-10"
+          >
+            {t('home.hero.description')}
+          </motion.p>
+          <motion.div variants={itemVariants} className="mt-12 flex gap-6 z-10">
+            <GlowButton to="/projects"> {/* Cambiado a /projects */}
+              {t('home.hero.viewWork')}
+            </GlowButton>
+            <Button as={Link} to="/contacto" variant="secondary">
+              {t('home.hero.getInTouch')}
+            </Button>
+          </motion.div>
         </div>
-      </section>
-    </>
-  );
+      </AnimatedSection>
+      
+      {/* About Me Section */}
+      <AnimatedSection variants={sectionVariants}>
+        <div id="about" className="text-center max-w-3xl mx-auto relative z-10"> {/* Added relative z-10 to bring content above particles */}
+          <h2 className="text-4xl font-bold text-center mb-6 text-primary">{t('home.about.title')}</h2>
+          <motion.p variants={itemVariants} className="text-lg text-text/80 whitespace-pre-line">
+            {t('home.about.description')}
+          </motion.p>
+        </div>
+      </AnimatedSection>
+      
+      {/* Skills Section */}
+      <AnimatedSection variants={sectionVariants}>
+        <div id="skills">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.skills.title')}</h2>
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
+            style={{ perspective: 1000 }}
+          >
+            {skills.map((skill, i) => (
+              <motion.div
+                key={i}
+                className="flex flex-col items-center justify-center p-6 bg-text rounded-lg shadow-lg"
+                whileHover={{
+                  rotateY: 20,
+                  rotateX: -10,
+                  scale: 1.1,
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                variants={itemVariants}
+              >
+                <div className="text-6xl text-primary">{skillIcons[skill.name]}</div>
+                <p className="mt-4 text-background font-semibold">{skill.name}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </AnimatedSection>
+
+      {/* Projects Section */}
+      <AnimatedSection variants={sectionVariants}>
+        <div id="proyectos">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.projects.title')}</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {myProjects.map((project) => (
+              <motion.div variants={itemVariants} key={project.title}>
+                <ProjectCard {...project} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <ProjectButton to="/projects"> {/* Use the new ProjectButton */}
+              {t('home.projects.viewAll')}
+            </ProjectButton>
+          </div>
+        </div>
+      </AnimatedSection>
+      
+      {/* Reviews Section */}
+      <ReviewsSection />
+    </div>
+  )
 };
+
 export default Home;

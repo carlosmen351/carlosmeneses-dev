@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "neverStopLearning",
+    "title": "Nunca Dejes de Aprender: Claves para una Carrera Tech Sostenible",
+    "date": "2024-10-08",
+    "description": "La tecnología es un río en constante movimiento. Reflexiones sobre cómo pasar de ser un experto en 'X' a un maestro del aprendizaje, evitando el burnout y encontrando la verdadera estabilidad profesional."
+  },
+  {
+    "slug": "myExperience",
+    "title": "Del Código al Cheque: Navegando Mi Primer Empleo Tech",
+    "date": "2020-02-01",
+    "description": "l salto de los tutoriales a un 'pull request' real es abismal. Una crónica sobre el síndrome del impostor, la parálisis por análisis y la revelación de que 'no saber' es parte del trabajo."
+  },
+  {
+    "slug": "myFirstCodeLine",
+    "title": "Mi Primera Línea de Código: El Comienzo de Todo",
+    "date": "2018-10-08",
+    "description": "Un viaje de mil líneas de código comienza con un solo 'Hola Mundo'. Recuerdo mis primeros pasos, los errores y la emoción de ver algo funcionar por primera vez."
+  }
+]

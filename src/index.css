@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-text: #0D1117;
+    --color-background: #F6F8FA;
+    --color-primary: #2F81F7;
+    --color-secondary: #D9DEE4;
+    --color-accent: #2DBA8D;
+    --color-border: #D9DEE4;
+  }
+
+  .dark {
+    --color-text: #E6EDF3;
+    --color-background: #0D1117;
+    --color-primary: #58A6FF;
+    --color-secondary: #30363D;
+    --color-accent: #39D39F;
+    --color-border: #30363D;
+  }
+
   html, body {
     @apply font-body text-base text-text bg-background;
   }

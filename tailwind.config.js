@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,11 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'text': '#e8effb',
-        'background': '#051023',
-        'primary': '#8baced',
-        'secondary': '#49158d',
-        'accent': '#a535e0',
+        'text': 'var(--color-text)',
+        'background': 'var(--color-background)',
+        'primary': 'var(--color-primary)',
+        'secondary': 'var(--color-secondary)',
+        'accent': 'var(--color-accent)',
+      },
+      borderColor: {
+        'default': 'var(--color-border)',
       },
       fontSize: {
         sm: '0.750rem',
@@ -23,8 +27,8 @@ export default {
         '5xl': '4.210rem',
       },
       fontFamily: {
-        heading: 'Gugi',
-        body: 'Gugi',
+        heading: ['Inter', 'sans-serif'],
+        body: ['ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       fontWeight: {
         normal: '400',

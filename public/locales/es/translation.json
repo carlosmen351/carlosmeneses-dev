@@ -1,0 +1,69 @@
+{
+  "navbar": {
+    "name": "Carlos Meneses",
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© {{year}} Carlos Meneses. All rights reserved.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter/X"
+  },
+  "home": {
+    "hero": {
+      "name": "Carlos Meneses",
+      "typewriter": [
+        "Frontend Developer",
+        "UI/UX Enthusiast",
+        "Creative Coder",
+        "Problem Solver"
+      ],
+      "description": "I build intuitive, engaging, and accessible web experiences with a focus on modern technologies.",
+      "viewWork": "View My Work",
+      "getInTouch": "Get in Touch"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "I'm a frontend developer passionate about creating clean, fast, and user-centered interfaces. I specialize in HTML, CSS, JavaScript, and modern frameworks like React, always striving to optimize performance and accessibility.\n\nMy approach goes beyond code: I'm interested in building digital experiences that connect with people and bring real business value. I've worked on projects where attention to detail and the ability to creatively solve problems made a difference.\n\nI'm motivated to learn and experiment with new technologies, maintaining a modular and scalable environment. Additionally, I enjoy collaborating in multidisciplinary teams, where communication and clarity are as important as technical skill."
+    },
+    "skills": {
+      "title": "My Skills",
+      "list": [
+        { "name": "JavaScript" },
+        { "name": "React" },
+        { "name": "Node.js" },
+        { "name": "Git" },
+        { "name": "SASS" },
+        { "name": "Cells" },
+        { "name": "Lit Element" },
+        { "name": "Web Components" },
+        { "name": "Jenkins" },
+        { "name": "Jira" },
+        { "name": "Linux" },
+        { "name": "GitHub" }
+      ]
+    },
+    "projects": {
+      "title": "My Projects",
+      "viewAll": "View All Projects"
+    }
+  },
+  "projectsPage": {
+    "title": "All Projects",
+    "subtitle": "A collection of my work and experiments."
+  },
+  "contactPage": {
+    "title": "Let's Talk",
+    "emailLabel": "Your Email",
+    "messageLabel": "Message",
+    "submitButton": "Send Message",
+    "successMessage": "Thank you for your message!",
+    "errorMessage": "An error occurred while sending the message"
+  },
+  "blogPage": {
+    "title": "My Blog"
+  }
+}

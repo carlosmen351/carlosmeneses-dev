@@ -1,13 +1,17 @@
 import { getAllPosts } from '../lib/posts';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import ParticlesBackground from '../components/ParticlesBackground';
+import { blogParticlesOptions } from '../config/particles-blog-config';
 
 const Blog = () => {
-  // Llamamos a la función directamente. ¡No más esperas!
+  const { t } = useTranslation();
   const posts = getAllPosts();
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Mi Blog</h1>
+    <div className="container mx-auto px-4 py-12 relative">
+      <ParticlesBackground options={blogParticlesOptions} />
+      <h1 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">{t('blogPage.title')}</h1>
       <div className="space-y-8 max-w-3xl mx-auto "> {/* Centramos el contenido */}
         {posts.map(post => (
           <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-primary via-secondary to-background animate-gradient-flow" style={{ backgroundSize: '400% 400%' }}>
