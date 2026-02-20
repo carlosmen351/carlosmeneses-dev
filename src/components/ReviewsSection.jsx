@@ -1,57 +1,80 @@
 import { useState, useEffect } from 'react';
-import AnimatedSection from './AnimatedSection';
-import ReviewCard from './ReviewCard';
 
+// Componente para mostrar una reseña individual
+const ReviewCard = ({ review }) => {
+  return (
+    <div className="bg-background border border-default rounded-lg p-6 shadow-lg flex flex-col items-center text-center">
+      <img
+        src={review.user.avatar_url}
+        alt={review.user.login}
+        className="w-16 h-16 rounded-full mb-4 border-2 border-primary"
+      />
+      <p className="text-text text-lg italic mb-4">"{review.body}"</p>
+      <a
+        href={review.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary hover:underline font-semibold"
+      >
+        — {review.user.login}
+      </a>
+    </div>
+  );
+};
+
+// Componente principal para la sección de reseñas
 const ReviewsSection = () => {
   const [reviews, setReviews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/reviews.json')
-      .then(response => response.json())
-      .then(data => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('/reviews.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
         setReviews(data);
-        setIsLoading(false);
-      })
-      .catch(error => {
-        console.error("Error al cargar las reseñas:", error);
-        setIsLoading(false);
-      });
+      } catch (e) {
+        console.error("Error fetching reviews:", e);
+        setError("No se pudieron cargar las reseñas. Inténtalo de nuevo más tarde.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReviews();
   }, []);
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  // No renderizar la sección si no hay reseñas y no está cargando.
-  if (!isLoading && reviews.length === 0) {
-    return null;
-  }
-  
-  return (
-    <AnimatedSection variants={sectionVariants}>
-      <div id="reviews">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-          Co-workers & Clients Reviews
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review) => (
-            <ReviewCard key={review.id} review={review} />
-          ))}
+  if (loading) {
+    return (
+      <section className="py-16 px-4">
+        <div className="container mx-auto text-center">
+          <p className="text-text text-xl">Cargando reseñas...</p>
         </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-16 px-4">
+        <div className="container mx-auto text-center">
+          <p className="text-red-500 text-xl">{error}</p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-16 px-4 bg-background">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {reviews.map((review) => <ReviewCard key={review.id} review={review} />)}
       </div>
-    </AnimatedSection>
+    </section>
   );
 };
 
 export default ReviewsSection;
-
