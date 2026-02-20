@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
-import ParticlesBackground from '../components/ParticlesBackground';
+import LazyParticlesBackground from '../components/LazyParticlesBackground'; // Changed import
 import { contactParticlesOptions } from '../config/particles-contact-config';
 
 const ContactPage = () => {
@@ -34,8 +34,8 @@ const ContactPage = () => {
 
   return (
     <section id="contacto" className="max-w-2xl mx-auto relative">
-      <ParticlesBackground options={contactParticlesOptions} />
-      <h2 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">{t('contactPage.title')}</h2>
+      <LazyParticlesBackground options={contactParticlesOptions} /> {/* Changed to LazyParticlesBackground */}
+      <h1 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">{t('contactPage.title')}</h1>
       <form
         onSubmit={handleSubmit}
         action="https://formspree.io/f/xrbydawv"

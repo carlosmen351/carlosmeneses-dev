@@ -1,18 +1,21 @@
 import { useTranslation } from 'react-i18next';
-import { Typewriter } from 'react-simple-typewriter';
 import { FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaCode, FaSatellite, FaCoffee, FaJenkins, FaJira, FaLinux, FaGithub} from 'react-icons/fa';
+import React, { Suspense, lazy } from 'react';
 import { SiSass } from 'react-icons/si';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import ProjectCard from '../components/ProjectCard';
+const ProjectCard = lazy(() => import('../components/ProjectCard'));
 import Button from '../components/Button';
 import ProjectButton from '../components/ProjectButton'; // Import the new button
 import { myProjects } from '../lib/projects';
 import AnimatedSection from '../components/AnimatedSection';
-import ParticlesBackground from '../components/ParticlesBackground';
+import { motion } from 'framer-motion'; // Keep motion for GlowButton and direct usage
+import SeoHead from '../components/SeoHead';
+import LazyParticlesBackground from '../components/LazyParticlesBackground'; // Changed import
 import { homeParticlesOptions } from '../config/particles-config';
-import ReviewsSection from '../components/ReviewsSection';
 
+const Typewriter = lazy(() => import('react-simple-typewriter').then(module => ({ default: module.Typewriter })));
+
+const ReviewsSection = lazy(() => import('../components/ReviewsSection'));
 const GlowButton = ({ children, to }) => (
   <motion.a
     as={Link} // Usa el componente Link de React Router
@@ -76,8 +79,13 @@ const Home = () => {
   };
 
   return (
+    <>
+      <SeoHead
+        title={t('home.seo.title')}
+        description={t('home.seo.description')}
+        canonicalUrl="https://carlosmeneses.dev/" />
     <div className="space-y-32 relative">
-      <ParticlesBackground options={homeParticlesOptions} className="z-0" /> {/* Added z-0 to ensure particles are in the background */}
+      <LazyParticlesBackground options={homeParticlesOptions} className="z-0" /> {/* Changed to LazyParticlesBackground */}
       {/* Hero Section */}
       <AnimatedSection variants={sectionVariants}>
         <div className="text-center flex flex-col items-center justify-center min-h-[80vh] relative overflow-hidden">
@@ -91,15 +99,17 @@ const Home = () => {
             variants={itemVariants}
             className="mt-2 text-2xl md:text-4xl text-primary font-heading z-10"
           >
-            <Typewriter
-              words={typewriterWords}
-              loop={true}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
+            <Suspense fallback={<span>{typewriterWords[0]}</span>}> {/* Fallback mientras carga */}
+              <Typewriter
+                words={typewriterWords}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </Suspense>
           </motion.p>
           <motion.p
             variants={itemVariants}
@@ -178,8 +188,11 @@ const Home = () => {
       </AnimatedSection>
       
       {/* Reviews Section */}
-      <ReviewsSection />
-    </div>
+      <Suspense fallback={null}>
+        <ReviewsSection />
+      </Suspense>
+      </div>
+    </>
   )
 };
 

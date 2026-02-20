@@ -22,8 +22,8 @@ const BlogPostPage = () => {
         {post.title}
       </h1>
       <p className="text-primary/70">{post.date}</p>
-      <hr />
-      <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-background via-secondary/40 to-background animate-gradient-flow" style={{ backgroundSize: '400% 400%' }}>
+      <hr className="my-8" />
+      <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-background via-secondary/40 to-background animate-gradient-flow">
         <Content components={components} />
       </div>
     </article>

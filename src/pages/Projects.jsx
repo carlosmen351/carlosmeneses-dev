@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
 import { myProjects } from '../lib/projects';
-import ParticlesBackground from '../components/ParticlesBackground';
+import LazyParticlesBackground from '../components/LazyParticlesBackground';
 import { projectsParticlesOptions } from '../config/particles-projects-config';
 
 const ProjectsPage = () => {
@@ -24,8 +24,8 @@ const ProjectsPage = () => {
       initial="hidden"
       animate="visible"
       className="space-y-16 relative"
-    >
-      <ParticlesBackground options={projectsParticlesOptions} />
+    >      
+      <LazyParticlesBackground options={projectsParticlesOptions} /> {/* Changed to LazyParticlesBackground */}
       <header className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-primary">{t('projectsPage.title')}</h1>
         <p className="mt-4 text-lg text-text/80">{t('projectsPage.subtitle')}</p>
@@ -37,7 +37,9 @@ const ProjectsPage = () => {
       >
         {myProjects.map((project) => (
           <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } }} key={project.title}>
-            <ProjectCard {...project} />
+            <Suspense fallback={null}>
+              <ProjectCard {...project} />
+            </Suspense>
           </motion.div>
         ))}
       </motion.div>

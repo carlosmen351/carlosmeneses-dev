@@ -14,7 +14,7 @@ const OUTPUT_FILE = 'reviews.json';
 // Buscamos issues abiertos con la etiqueta especificada.
 // Es buena práctica cerrar las issues una vez que la reseña ha sido "procesada",
 // pero para facilitar el flujo, las buscamos abiertas.
-const API_URL = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/issues?labels=${LABEL}&state=open`;
+const API_URL = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/issues?labels=${LABEL}&state=all`;
 
 // Path de salida para el archivo JSON
 const outputPath = path.join(process.cwd(), OUTPUT_DIR, OUTPUT_FILE);

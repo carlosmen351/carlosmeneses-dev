@@ -1,7 +1,7 @@
 import { getAllPosts } from '../lib/posts';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import ParticlesBackground from '../components/ParticlesBackground';
+import LazyParticlesBackground from '../components/LazyParticlesBackground'; // Changed import
 import { blogParticlesOptions } from '../config/particles-blog-config';
 
 const Blog = () => {
@@ -10,7 +10,7 @@ const Blog = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 relative">
-      <ParticlesBackground options={blogParticlesOptions} />
+      <LazyParticlesBackground options={blogParticlesOptions} /> {/* Changed to LazyParticlesBackground */}
       <h1 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">{t('blogPage.title')}</h1>
       <div className="space-y-8 max-w-3xl mx-auto "> {/* Centramos el contenido */}
         {posts.map(post => (

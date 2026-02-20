@@ -1,5 +1,5 @@
 // src/lib/projects.js
-import constuctionImage from '../assets/inCosntruction.jpg';
+import constuctionImage from '../assets/inCosntruction.webp';
 
 export const myProjects = [
   {

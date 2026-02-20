@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logoImage from '../assets/logoAzul.png';
+import logoImage from '../assets/logoAzul.webp';
 import ThemeSwitcher from './ThemeSwitcher';
 
 const NavItem = ({ to, children, onClick }) => {
@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm py-4">
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoImage} alt="Logo" className="h-10 w-10 rounded-full" />
+          <img src={logoImage} alt="Logo" className="h-10 w-10 rounded-full" fetchpriority="high" loading="eager" />
           <span className="text-xl font-bold text-text">{t('navbar.name')}</span>
         </Link>
 

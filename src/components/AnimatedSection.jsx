@@ -1,31 +1,20 @@
-// src/components/AnimatedSection.jsx
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import React, { lazy, Suspense } from 'react';
 
-const AnimatedSection = ({ children, variants }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+// Carga diferida del componente motion.section de framer-motion
+const MotionSection = lazy(() => import('framer-motion').then(mod => ({ default: mod.motion.section })));
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={controls}
+const AnimatedSection = ({ children, variants }) => (
+  <Suspense fallback={<section className="py-16">{children}</section>}>
+    <MotionSection
       variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="py-16"
     >
       {children}
-    </motion.section>
-  );
-};
+    </MotionSection>
+  </Suspense>
+);
 
 export default AnimatedSection;

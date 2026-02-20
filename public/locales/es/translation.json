@@ -1,5 +1,9 @@
 {
   "navbar": {
+    "seo": {
+      "title": "Carlos Meneses - Desarrollador Frontend | UI/UX",
+      "description": "Portafolio de Carlos Meneses, desarrollador frontend especializado en React, UI/UX y rendimiento web. Explora mis proyectos, blog y servicios."
+    },
     "name": "Carlos Meneses",
     "home": "Home",
     "projects": "Projects",
@@ -25,9 +29,17 @@
       "viewWork": "View My Work",
       "getInTouch": "Get in Touch"
     },
+    "seo": {
+      "title": "Carlos Meneses - Desarrollador Frontend | UI/UX",
+      "description": "Portafolio de Carlos Meneses, desarrollador frontend especializado en React, UI/UX y rendimiento web. Explora mis proyectos, blog y servicios."
+    },
     "about": {
       "title": "About Me",
       "description": "I'm a frontend developer passionate about creating clean, fast, and user-centered interfaces. I specialize in HTML, CSS, JavaScript, and modern frameworks like React, always striving to optimize performance and accessibility.\n\nMy approach goes beyond code: I'm interested in building digital experiences that connect with people and bring real business value. I've worked on projects where attention to detail and the ability to creatively solve problems made a difference.\n\nI'm motivated to learn and experiment with new technologies, maintaining a modular and scalable environment. Additionally, I enjoy collaborating in multidisciplinary teams, where communication and clarity are as important as technical skill."
+    },
+    "projects_seo": {
+      "title": "Proyectos de Carlos Meneses - Desarrollador Frontend",
+      "description": "Descubre los proyectos de desarrollo frontend de Carlos Meneses, incluyendo aplicaciones web, componentes UI y experimentos con tecnologías modernas."
     },
     "skills": {
       "title": "My Skills",
@@ -52,10 +64,18 @@
     }
   },
   "projectsPage": {
+    "seo": {
+      "title": "Proyectos de Carlos Meneses - Desarrollador Frontend",
+      "description": "Descubre los proyectos de desarrollo frontend de Carlos Meneses, incluyendo aplicaciones web, componentes UI y experimentos con tecnologías modernas."
+    },
     "title": "All Projects",
     "subtitle": "A collection of my work and experiments."
   },
   "contactPage": {
+    "seo": {
+      "title": "Contacto - Carlos Meneses",
+      "description": "Ponte en contacto con Carlos Meneses para colaboraciones, consultas o simplemente para saludar. Desarrollador frontend disponible para nuevos proyectos."
+    },
     "title": "Let's Talk",
     "emailLabel": "Your Email",
     "messageLabel": "Message",
@@ -64,6 +84,10 @@
     "errorMessage": "An error occurred while sending the message"
   },
   "blogPage": {
+    "seo": {
+      "title": "Blog de Carlos Meneses - Artículos sobre Desarrollo Frontend",
+      "description": "Lee los últimos artículos de Carlos Meneses sobre desarrollo frontend, React, UI/UX, rendimiento web y experiencias en la industria tecnológica."
+    },
     "title": "My Blog"
   }
 }
