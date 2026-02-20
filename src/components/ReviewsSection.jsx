@@ -1,9 +1,33 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'; // Importa motion para las animaciones
 
 // Componente para mostrar una reseña individual
 const ReviewCard = ({ review }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+  };
+
   return (
-    <div className="bg-background border border-default rounded-lg p-6 shadow-lg flex flex-col items-center text-center">
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      whileHover={{
+        y: -5, // Eleva la tarjeta ligeramente
+        boxShadow: "0 15px 30px rgba(0, 0, 0, 0.3)", // Sombra más pronunciada
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+      className="bg-background border border-gray-800 dark:border-gray-200 rounded-lg p-6 shadow-lg flex flex-col items-center text-center"
+    >
       <img
         src={review.user.avatar_url}
         alt={review.user.login}
@@ -18,7 +42,7 @@ const ReviewCard = ({ review }) => {
       >
         — {review.user.login}
       </a>
-    </div>
+    </motion.div>
   );
 };
 

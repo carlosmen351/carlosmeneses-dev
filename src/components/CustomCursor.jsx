@@ -4,11 +4,26 @@ import { motion } from 'framer-motion';
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
+  const [isMobile, setIsMobile] = useState(false); // Nuevo estado para detectar si es un dispositivo móvil
 
   useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    // Detecta si es móvil al montar y al redimensionar la ventana
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Asumiendo el breakpoint 'md' de Tailwind CSS
     };
+
+    handleResize(); // Establece el estado inicial
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return; // No añadir listeners de ratón en dispositivos móviles
+
+    const mouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });
 
     const mouseEnter = (e) => {
       const target = e.target;
@@ -38,7 +53,7 @@ const CustomCursor = () => {
       document.removeEventListener("mouseover", mouseEnter);
       document.removeEventListener("mouseout", mouseLeave);
     };
-  }, []);
+  }, [isMobile]); // Re-ejecutar el efecto cuando isMobile cambie
 
   const variants = {
     default: {
@@ -66,6 +81,10 @@ const CustomCursor = () => {
     }
   };
   
+  if (isMobile) {
+    return null; // No renderizar el cursor personalizado en dispositivos móviles
+  }
+
 
   return (
     <motion.div

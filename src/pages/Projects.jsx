@@ -1,5 +1,6 @@
 // src/pages/Projects.jsx
 import { motion } from 'framer-motion';
+import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
 import { myProjects } from '../lib/projects';

@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="relative w-12 h-6 rounded-full flex items-center justify-center bg-secondary">
+    <button onClick={toggleTheme} className="relative h-6 w-6 rounded-full flex items-center justify-center"> {/* Removed bg-secondary */}
       <AnimatePresence mode="wait">
         {theme === 'dark' ? (
           <motion.div
@@ -30,7 +30,7 @@ const ThemeSwitcher = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
           >
-            <FaMoon className="text-accent" />
+            <FaMoon className="h-6 w-6 text-primary" />
           </motion.div>
         ) : (
           <motion.div
@@ -40,7 +40,7 @@ const ThemeSwitcher = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
           >
-            <FaSun className="text-yellow-400" />
+            <FaSun className="h-6 w-6 text-primary" />
           </motion.div>
         )}
       </AnimatePresence>
