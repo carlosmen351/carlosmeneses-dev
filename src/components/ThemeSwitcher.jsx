@@ -30,7 +30,7 @@ const ThemeSwitcher = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
           >
-            <FaMoon className="h-6 w-6 text-primary" />
+            <FaMoon className="h-6 w-6 text-primary" fill="currentColor" />
           </motion.div>
         ) : (
           <motion.div
@@ -40,7 +40,7 @@ const ThemeSwitcher = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
           >
-            <FaSun className="h-6 w-6 text-primary" />
+            <FaSun className="h-6 w-6 text-primary" fill="currentColor" />
           </motion.div>
         )}
       </AnimatePresence>

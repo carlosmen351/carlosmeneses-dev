@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const CustomCursor = () => {
+const CustomCursor = ({ isEnabled = true }) => { // Añadida prop isEnabled con valor por defecto true
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
   const [isMobile, setIsMobile] = useState(false); // Nuevo estado para detectar si es un dispositivo móvil
@@ -21,7 +21,7 @@ const CustomCursor = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobile) return; // No añadir listeners de ratón en dispositivos móviles
+    if (!isEnabled || isMobile) return; // No añadir listeners de ratón si no está habilitado o es móvil
 
     const mouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });
 
@@ -53,10 +53,10 @@ const CustomCursor = () => {
       document.removeEventListener("mouseover", mouseEnter);
       document.removeEventListener("mouseout", mouseLeave);
     };
-  }, [isMobile]); // Re-ejecutar el efecto cuando isMobile cambie
+  }, [isEnabled, isMobile]); // Re-ejecutar el efecto cuando isEnabled o isMobile cambie
 
-  const variants = {
-    default: {
+  const variants = { // Definición de variantes para la animación del cursor
+    default: { // Variante por defecto
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
       height: 16,
@@ -64,7 +64,7 @@ const CustomCursor = () => {
       backgroundColor: "rgba(255, 255, 255, 0.5)",
       mixBlendMode: "difference"
     },
-    text: {
+    text: { // Variante para texto
       height: 80,
       width: 80,
       x: mousePosition.x - 40,
@@ -72,7 +72,7 @@ const CustomCursor = () => {
       backgroundColor: "rgba(255, 255, 255, 1)",
       mixBlendMode: "difference"
     },
-    link: {
+    link: { // Variante para enlaces/botones
       height: 40,
       width: 40,
       x: mousePosition.x - 20,
@@ -80,8 +80,7 @@ const CustomCursor = () => {
       backgroundColor: "rgba(88, 166, 255, 0.5)",
     }
   };
-  
-  if (isMobile) {
+  if (!isEnabled || isMobile) { // No renderizar el cursor si no está habilitado o es un dispositivo móvil
     return null; // No renderizar el cursor personalizado en dispositivos móviles
   }
 

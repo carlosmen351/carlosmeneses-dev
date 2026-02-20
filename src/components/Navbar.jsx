@@ -19,7 +19,7 @@ const NavItem = ({ to, children, onClick, icon: Icon, isMobile = false, classNam
     >
       {isMobile && Icon ? (
         <>
-          <Icon className="h-6 w-6" />
+          <Icon className="h-6 w-6" fill="currentColor" />
           <span className="sr-only">{children}</span>
         </>
       ) : (

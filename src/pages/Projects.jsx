@@ -1,11 +1,11 @@
 // src/pages/Projects.jsx
 import { motion } from 'framer-motion';
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
-import ProjectCard from '../components/ProjectCard';
 import { myProjects } from '../lib/projects';
 import LazyParticlesBackground from '../components/LazyParticlesBackground';
 import { projectsParticlesOptions } from '../config/particles-projects-config';
+const ProjectCard = lazy(() => import('../components/ProjectCard'));
 
 const ProjectsPage = () => {
   const { t } = useTranslation();

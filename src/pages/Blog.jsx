@@ -11,7 +11,7 @@ const Blog = () => {
   return (
     <div className="container mx-auto px-4 py-12 relative">
       <LazyParticlesBackground options={blogParticlesOptions} /> {/* Changed to LazyParticlesBackground */}
-      <h1 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">{t('blogPage.title')}</h1>
+      <h1 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">{t('blogPage.title')}</h1>
       <div className="space-y-8 max-w-3xl mx-auto "> {/* Centramos el contenido */}
         {posts.map(post => (
           <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-primary via-secondary to-background animate-gradient-flow" style={{ backgroundSize: '400% 400%' }}>
