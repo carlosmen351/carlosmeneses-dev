@@ -6,6 +6,7 @@ import Blog from './pages/Blog';
 import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
 import ProjectsPage from './pages/Projects';
+import CVPage from './pages/CVPage';
 import CustomCursor from './components/CustomCursor';
 import { useMediaQuery } from 'react-responsive';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contacto" element={<ContactPage />} />
+          <Route path="/cv" element={<CVPage />} />
         </Routes>
       </main>
       <Footer />

@@ -83,7 +83,9 @@ const Home = () => {
       <SeoHead
         title={t('home.seo.title')}
         description={t('home.seo.description')}
-        canonicalUrl="https://carlosmeneses.dev/" />
+        canonicalUrl="https://carlosmeneses.dev/"
+        ogImage="https://carlosmeneses.dev/logoAzul.webp"
+      />
     <div className="space-y-32 relative">
       <LazyParticlesBackground options={homeParticlesOptions} className="z-0" /> {/* Changed to LazyParticlesBackground */}
       {/* Hero Section */}

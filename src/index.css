@@ -28,3 +28,48 @@
     @apply font-heading;
   }
 }
+
+@media print {
+  /* Ocultar la barra de navegación y el pie de página */
+  nav, footer {
+    display: none;
+  }
+
+  /* Asegurarse de que el contenido del CV ocupe todo el espacio */
+  body, #root {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  main.container {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  #cv-container {
+    box-shadow: none;
+    border: none;
+    padding: 1rem;
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  h1,h2,h3,h4,h5,h6,p,span,a,li {
+    color: #000000 !important;
+  }
+
+  /* Evitar saltos de página inoportunos */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  p, ul {
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

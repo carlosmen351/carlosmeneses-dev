@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import logoImage from '../assets/logoAzul.webp';
 import { motion, AnimatePresence } from 'framer-motion'; // Keep motion for GlowButton and direct usage
 import ThemeSwitcher from './ThemeSwitcher';
-import { FaHome, FaFolderOpen, FaPencilAlt, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaFolderOpen, FaPencilAlt, FaEnvelope, FaAddressCard } from 'react-icons/fa';
 
 const NavItem = ({ to, children, onClick, icon: Icon, isMobile = false, className = '' }) => {
   const activeClasses = "text-text border-b-2 border-primary";
@@ -83,6 +83,7 @@ const Navbar = () => {
           <li><NavItem to="/projects">{t('navbar.projects')}</NavItem></li>
           <li><NavItem to="/blog">{t('navbar.blog')}</NavItem></li>
           <li><NavItem to="/contacto">{t('navbar.contact')}</NavItem></li>
+          <li><NavItem to="/cv">{t('navbar.cv')}</NavItem></li>
           <li>
             <ThemeSwitcher />
           </li>
@@ -151,6 +152,9 @@ const Navbar = () => {
                   </motion.li>
                   <motion.li variants={menuItemVariants}>
                     <NavItem to="/contacto" onClick={closeMenu} icon={FaEnvelope} isMobile={true} className="text-primary">{t('navbar.contact')}</NavItem>
+                  </motion.li>
+                  <motion.li variants={menuItemVariants}>
+                    <NavItem to="/cv" onClick={closeMenu} icon={FaAddressCard} isMobile={true} className="text-primary">{t('navbar.cv')}</NavItem>
                   </motion.li>
                   <motion.li variants={menuItemVariants}>
                     <ThemeSwitcher />

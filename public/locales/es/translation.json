@@ -8,7 +8,8 @@
     "home": "Home",
     "projects": "Projects",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "cv": "CV"
   },
   "footer": {
     "copyright": "© {{year}} Carlos Meneses. All rights reserved.",

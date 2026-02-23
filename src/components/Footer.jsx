@@ -20,8 +20,8 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/carlosmen351/" target="_blank" rel="noopener noreferrer" className="text-primary/80 hover:text-text transition-colors duration-300">
             {t('footer.linkedin')}
           </a>
-          <a href="https://https//twitter.com/carlosmen351" target="_blank" rel="noopener noreferrer" className="text-primary/80 hover:text-text transition-colors duration-300">
-            {t('footer.twitter')}
+          <a href="/cv-carlos-meneses.pdf" download="cv-carlos-meneses.pdf" className="text-primary/80 hover:text-text transition-colors duration-300">
+            Download CV
           </a>
         </div>
       </div>
