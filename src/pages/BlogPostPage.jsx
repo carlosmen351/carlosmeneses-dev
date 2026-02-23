@@ -15,16 +15,18 @@ const BlogPostPage = () => {
   const components = { pre: AnimatedCodeBlock };
 
   return (
-    <article className="prose prose-invert lg:prose-xl mx-auto">
-      <h1
-      className='text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-white'
-      >
+    <article className="prose dark:prose-invert lg:prose-xl mx-auto">
+      <h1>
         {post.title}
       </h1>
       <p className="text-primary/70">{post.date}</p>
       <hr className="my-8" />
-      <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-flow">
-        <Content components={components} />
+      <div className="mb-8 p-8 rounded-lg bg-gradient-to-r from-primary via-secondary to-background animate-gradient-flow" style={{ backgroundSize: '200% 200%' }}>
+        <div className="bg-background rounded-lg">
+          <div className="p-8">
+            <Content components={components} />
+          </div>
+        </div>
       </div>
     </article>
   );

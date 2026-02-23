@@ -1,13 +1,14 @@
 // src/lib/projects.js
 import constuctionImage from '../assets/inCosntruction.webp';
+import minigames from '../assets/minigames.png';
 
 export const myProjects = [
   {
-    title: 'Proyecto Secreto',
-    description: 'Innovación en desarrollo, pronto más detalles.',
-    techStack: ['React', 'Next.js', 'Firebase'],
-    image: constuctionImage, // placeholder
-    link: '/projects',
+    title: 'MenesesMinigames',
+    description: 'Pagina web con juegos interactivos(web/movil).',
+    techStack: ['React + vite', 'Tailwind CSS', 'Git + GitHub', 'Vercel'],
+    image: minigames,
+    link: 'https://menesesminigames.carlosmeneses.dev/',
     projectType: 'WebApp Moderna',
   },
   {

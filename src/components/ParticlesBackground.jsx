@@ -23,7 +23,7 @@ const ParticlesBackground = ({ options, className = "" }) => { // Accept classNa
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options}
-        className={`absolute inset-0 ${className}`} // Apply className prop
+        className={`absolute inset-0 z-0 ${className}`} // Apply className prop and set base z-index
       />
     );
   }

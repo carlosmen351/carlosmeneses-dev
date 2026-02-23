@@ -87,112 +87,114 @@ const Home = () => {
         ogImage="https://carlosmeneses.dev/logoAzul.webp"
       />
     <div className="space-y-32 relative">
-      <LazyParticlesBackground options={homeParticlesOptions} className="z-0" /> {/* Changed to LazyParticlesBackground */}
-      {/* Hero Section */}
-      <AnimatedSection variants={sectionVariants}>
-        <div className="text-center flex flex-col items-center justify-center min-h-[80vh] relative overflow-hidden">
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold leading-tight text-text mb-4 z-10"
-          >
-            {t('home.hero.name')}
-          </motion.h1>
-          <motion.p
-            variants={itemVariants}
-            className="mt-2 text-2xl md:text-4xl text-primary font-heading z-10"
-          >
-            <Suspense fallback={<span>{typewriterWords[0]}</span>}> {/* Fallback mientras carga */}
-              <Typewriter
-                words={typewriterWords}
-                loop={true}
-                cursor
-                cursorStyle="_"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </Suspense>
-          </motion.p>
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-2xl text-lg text-text/80 z-10"
-          >
-            {t('home.hero.description')}
-          </motion.p>
-          <motion.div variants={itemVariants} className="mt-12 flex gap-6 z-10">
-            <GlowButton to="/projects"> {/* Cambiado a /projects */}
-              {t('home.hero.viewWork')}
-            </GlowButton>
-            <Button as={Link} to="/contacto" variant="secondary">
-              {t('home.hero.getInTouch')}
-            </Button>
-          </motion.div>
-        </div>
-      </AnimatedSection>
-      
-      {/* About Me Section */}
-      <AnimatedSection variants={sectionVariants}>
-        <div id="about" className="text-center max-w-3xl mx-auto relative z-10"> {/* Added relative z-10 to bring content above particles */}
-          <h2 className="text-4xl font-bold text-center mb-6 text-primary">{t('home.about.title')}</h2>
-          <motion.p variants={itemVariants} className="text-lg text-text/80 whitespace-pre-line">
-            {t('home.about.description')}
-          </motion.p>
-        </div>
-      </AnimatedSection>
-      
-      {/* Skills Section */}
-      <AnimatedSection variants={sectionVariants}>
-        <div id="skills">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.skills.title')}</h2>
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
-            style={{ perspective: 1000 }}
-          >
-            {skills.map((skill, i) => (
-              <motion.div
-                key={i}
-                className="flex flex-col items-center justify-center p-6 bg-text rounded-lg shadow-lg"
-                whileHover={{
-                  rotateY: 20,
-                  rotateX: -10,
-                  scale: 1.1,
-                  y: -10,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                variants={itemVariants}
-              >
-                <div className="text-6xl text-primary">{skillIcons[skill.name]}</div>
-                <p className="mt-4 text-background font-semibold">{skill.name}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </AnimatedSection>
+      <LazyParticlesBackground options={homeParticlesOptions} className="z-0" />
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <AnimatedSection variants={sectionVariants}>
+          <div className="text-center flex flex-col items-center justify-center min-h-[80vh] relative overflow-hidden">
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-7xl font-bold leading-tight text-text mb-4"
+            >
+              {t('home.hero.name')}
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="mt-2 text-2xl md:text-4xl text-primary font-heading"
+            >
+              <Suspense fallback={<span>{typewriterWords[0]}</span>}> {/* Fallback mientras carga */}
+                <Typewriter
+                  words={typewriterWords}
+                  loop={true}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </Suspense>
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="mt-6 max-w-2xl text-lg text-text/80"
+            >
+              {t('home.hero.description')}
+            </motion.p>
+            <motion.div variants={itemVariants} className="mt-12 flex gap-6">
+              <GlowButton to="/projects"> {/* Cambiado a /projects */}
+                {t('home.hero.viewWork')}
+              </GlowButton>
+              <Button as={Link} to="/contacto" variant="secondary">
+                {t('home.hero.getInTouch')}
+              </Button>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+        
+        {/* About Me Section */}
+        <AnimatedSection variants={sectionVariants}>
+          <div id="about" className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-6 text-primary">{t('home.about.title')}</h2>
+            <motion.p variants={itemVariants} className="text-lg text-text/80 whitespace-pre-line">
+              {t('home.about.description')}
+            </motion.p>
+          </div>
+        </AnimatedSection>
+        
+        {/* Skills Section */}
+        <AnimatedSection variants={sectionVariants}>
+          <div id="skills">
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.skills.title')}</h2>
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
+              style={{ perspective: 1000 }}
+            >
+              {skills.map((skill, i) => (
+                <motion.div
+                  key={i}
+                  className="flex flex-col items-center justify-center p-6 bg-text rounded-lg shadow-lg"
+                  whileHover={{
+                    rotateY: 20,
+                    rotateX: -10,
+                    scale: 1.1,
+                    y: -10,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                  variants={itemVariants}
+                >
+                  <div className="text-6xl text-primary">{skillIcons[skill.name]}</div>
+                  <p className="mt-4 text-background font-semibold">{skill.name}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </AnimatedSection>
 
-      {/* Projects Section */}
-      <AnimatedSection variants={sectionVariants}>
-        <div id="proyectos">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.projects.title')}</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {myProjects.map((project) => (
-              <motion.div variants={itemVariants} key={project.title}>
-                <ProjectCard {...project} />
-              </motion.div>
-            ))}
+        {/* Projects Section */}
+        <AnimatedSection variants={sectionVariants}>
+          <div id="proyectos">
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.projects.title')}</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {myProjects.map((project) => (
+                <motion.div variants={itemVariants} key={project.title}>
+                  <ProjectCard {...project} />
+                </motion.div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <ProjectButton to="/projects"> {/* Use the new ProjectButton */}
+                {t('home.projects.viewAll')}
+              </ProjectButton>
+            </div>
           </div>
-          <div className="text-center mt-12">
-            <ProjectButton to="/projects"> {/* Use the new ProjectButton */}
-              {t('home.projects.viewAll')}
-            </ProjectButton>
-          </div>
-        </div>
-      </AnimatedSection>
-      
-      {/* Reviews Section */}
-      <Suspense fallback={null}>
-        <ReviewsSection />
-      </Suspense>
+        </AnimatedSection>
+        
+        {/* Reviews Section */}
+        <Suspense fallback={null}>
+          <ReviewsSection />
+        </Suspense>
+      </div>
       </div>
     </>
   )
