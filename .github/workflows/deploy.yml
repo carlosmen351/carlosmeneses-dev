@@ -1,9 +1,10 @@
 name: Production Release & Deploy
-
 on:
   release:
     types: [published]
-
+permissions:
+  contents: read
+  issues: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
