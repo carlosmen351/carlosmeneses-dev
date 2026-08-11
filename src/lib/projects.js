@@ -2,6 +2,7 @@
 import constuctionImage from '../assets/inCosntruction.webp';
 import minigames from '../assets/minigames.png';
 import agnosticPreview from '../assets/agnostic-preview.svg';
+import financialCalculatorPreview from '../assets/financial-calculator-preview.svg';
 
 export const myProjects = [
   {
@@ -23,9 +24,9 @@ export const myProjects = [
   {
     title: 'Calculadora Fin.',
     description: 'Herramienta para presupuestos e inversión.',
-    techStack: ['JavaScript', 'PostCSS', 'Mocha + GitHub Actions + Netlify'],
-    image: constuctionImage, // placeholder
-    link: '/projects',
-    projectType: 'Lightweight Web', // This type is not in gradients, will fall to default
+    techStack: ['JavaScript', 'PostCSS', 'Mocha + GitHub Actions + Vercel'],
+    image: financialCalculatorPreview,
+    link: 'https://fin-calc.carlosmeneses.dev/',
+    projectType: 'Lightweight Web',
   }
 ];
