@@ -1,6 +1,7 @@
 // src/lib/projects.js
 import constuctionImage from '../assets/inCosntruction.webp';
 import minigames from '../assets/minigames.png';
+import agnosticPreview from '../assets/agnostic-preview.svg';
 
 export const myProjects = [
   {
@@ -11,12 +12,12 @@ export const myProjects = [
     link: 'https://menesesminigames.carlosmeneses.dev/',
     projectType: 'WebApp Moderna',
   },
-  {
+    {
     title: 'Agnostic D.S.',
     description: 'Biblioteca de componentes UI con Monorepo.',
     techStack: ['LitElement', 'TypeScript', 'Monorepo (pnpm)', 'SASS'],
-    image: constuctionImage, // placeholder
-    link: '/projects',
+    image: agnosticPreview,
+    link: 'https://design-system-camedev.vercel.app/',
     projectType: 'Web Corporativa',
   },
   {

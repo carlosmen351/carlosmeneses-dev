@@ -1,0 +1,175 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#051023"/>
+  
+  <!-- Header Section -->
+  <rect width="1200" height="120" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="60" y="80" font-family="Gugi, cursive" font-size="48" font-weight="bold" fill="#e8effb">
+    Agnostic Design System
+  </text>
+  
+  <!-- Grid of Components -->
+  <!-- Row 1: Cards with Components -->
+  
+  <!-- Card 1: Button Variants -->
+  <rect x="40" y="160" width="280" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="60" y="195" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Buttons
+  </text>
+  
+  <!-- Modern Button -->
+  <rect x="60" y="220" width="240" height="45" rx="8" fill="#8baced"/>
+  <text x="90" y="250" font-family="Gugi, cursive" font-size="14" fill="#051023" font-weight="bold">
+    Modern Button
+  </text>
+  
+  <!-- Glass Button -->
+  <rect x="60" y="280" width="240" height="45" rx="8" fill="none" stroke="#8baced" stroke-width="2" opacity="0.6"/>
+  <text x="90" y="310" font-family="Gugi, cursive" font-size="14" fill="#8baced" font-weight="bold">
+    Glass Button
+  </text>
+  
+  <!-- Card 2: Badges & Status -->
+  <rect x="360" y="160" width="280" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="380" y="195" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Badges
+  </text>
+  
+  <!-- Success Badge -->
+  <rect x="380" y="220" width="100" height="30" rx="15" fill="#10b981"/>
+  <text x="400" y="242" font-family="Gugi, cursive" font-size="12" fill="#fff" font-weight="bold">
+    Activo
+  </text>
+  
+  <!-- Warning Badge -->
+  <rect x="500" y="220" width="100" height="30" rx="15" fill="#f59e0b"/>
+  <text x="515" y="242" font-family="Gugi, cursive" font-size="12" fill="#fff" font-weight="bold">
+    Pendiente
+  </text>
+  
+  <!-- Error Badge -->
+  <rect x="380" y="270" width="100" height="30" rx="15" fill="#ef4444"/>
+  <text x="400" y="292" font-family="Gugi, cursive" font-size="12" fill="#fff" font-weight="bold">
+    Error
+  </text>
+  
+  <!-- Card 3: Form Elements -->
+  <rect x="680" y="160" width="280" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="700" y="195" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Form Elements
+  </text>
+  
+  <!-- Input Field -->
+  <rect x="700" y="220" width="240" height="40" rx="8" fill="#1e293b" stroke="#8baced" stroke-width="1"/>
+  <text x="715" y="246" font-family="Gugi, cursive" font-size="12" fill="#8baced">
+    Username
+  </text>
+  
+  <!-- Toggle -->
+  <circle cx="730" cy="310" r="15" fill="#1e293b" stroke="#8baced" stroke-width="2"/>
+  <circle cx="745" cy="310" r="12" fill="#a535e0"/>
+  <text x="765" y="318" font-family="Gugi, cursive" font-size="14" fill="#e8effb">
+    Notifications
+  </text>
+  
+  <!-- Card 4: Alerts -->
+  <rect x="1000" y="160" width="160" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="1020" y="195" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Alerts
+  </text>
+  
+  <!-- Info Alert -->
+  <rect x="1020" y="220" width="120" height="35" rx="6" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1030" y="243" font-family="Gugi, cursive" font-size="11" fill="#3b82f6" font-weight="bold">
+    Info
+  </text>
+  
+  <!-- Success Alert -->
+  <rect x="1020" y="270" width="120" height="35" rx="6" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="1"/>
+  <text x="1030" y="293" font-family="Gugi, cursive" font-size="11" fill="#10b981" font-weight="bold">
+    Success
+  </text>
+  
+  <!-- Row 2: Components -->
+  
+  <!-- Card 5: Spinner -->
+  <rect x="40" y="430" width="280" height="200" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="60" y="465" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Spinners
+  </text>
+  
+  <!-- Spinner animations (circles) -->
+  <circle cx="100" cy="520" r="20" fill="none" stroke="#8baced" stroke-width="3" opacity="0.6"/>
+  <circle cx="180" cy="520" r="20" fill="none" stroke="#a535e0" stroke-width="3" opacity="0.6"/>
+  <circle cx="260" cy="520" r="20" fill="none" stroke="#49158d" stroke-width="3" opacity="0.6"/>
+  
+  <!-- Card 6: Modal -->
+  <rect x="360" y="430" width="280" height="200" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="380" y="465" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Modal
+  </text>
+  
+  <!-- Modal Box -->
+  <rect x="380" y="490" width="240" height="110" rx="8" fill="#1e293b" stroke="#8baced" stroke-width="2"/>
+  <text x="400" y="520" font-family="Gugi, cursive" font-size="14" font-weight="bold" fill="#e8effb">
+    Modal Title
+  </text>
+  <text x="400" y="545" font-family="Gugi, cursive" font-size="12" fill="#e8effb" opacity="0.8">
+    Confirmar acción?
+  </text>
+  
+  <!-- Modal Buttons -->
+  <rect x="390" y="560" width="80" height="30" rx="6" fill="none" stroke="#8baced" stroke-width="1"/>
+  <text x="410" y="580" font-family="Gugi, cursive" font-size="11" fill="#8baced">
+    Cancelar
+  </text>
+  
+  <rect x="480" y="560" width="80" height="30" rx="6" fill="#8baced"/>
+  <text x="495" y="580" font-family="Gugi, cursive" font-size="11" fill="#051023" font-weight="bold">
+    Confirmar
+  </text>
+  
+  <!-- Card 7: Accordion -->
+  <rect x="680" y="430" width="280" height="200" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="700" y="465" font-family="Gugi, cursive" font-size="18" font-weight="bold" fill="#8baced">
+    Accordion
+  </text>
+  
+  <!-- Accordion Item 1 -->
+  <rect x="700" y="490" width="240" height="40" rx="6" fill="#1e293b" stroke="#8baced" stroke-width="1"/>
+  <text x="720" y="516" font-family="Gugi, cursive" font-size="13" fill="#8baced" font-weight="bold">
+    ▼ Ver detalles técnicos
+  </text>
+  
+  <!-- Accordion Item 2 (closed) -->
+  <rect x="700" y="545" width="240" height="40" rx="6" fill="#1e293b" stroke="#49158d" stroke-width="1" opacity="0.5"/>
+  <text x="720" y="571" font-family="Gugi, cursive" font-size="13" fill="#49158d" font-weight="bold" opacity="0.7">
+    ▶ Más información
+  </text>
+  
+  <!-- Card 8: Links & Toggle -->
+  <rect x="1000" y="430" width="160" height="200" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="1020" y="465" font-family="Gugi, cursive" font-size="16" font-weight="bold" fill="#8baced">
+    Controls
+  </text>
+  
+  <!-- Link -->
+  <text x="1020" y="510" font-family="Gugi, cursive" font-size="13" fill="#8baced" font-weight="bold">
+    <tspan x="1020">Primary Link</tspan>
+  </text>
+  
+  <!-- Card/Input -->
+  <rect x="1020" y="530" width="120" height="80" rx="6" fill="#1e293b" stroke="#8baced" stroke-width="1" opacity="0.5"/>
+  <text x="1030" y="555" font-family="Gugi, cursive" font-size="11" fill="#e8effb" font-weight="bold">
+    Card Component
+  </text>
+  <text x="1030" y="575" font-family="Gugi, cursive" font-size="9" fill="#e8effb" opacity="0.7">
+    With content
+  </text>
+  
+  <!-- Footer Badge -->
+  <rect x="40" y="640" width="1120" height="25" fill="#49158d" opacity="0.3" stroke="#8baced" stroke-width="1" rx="4"/>
+  <text x="60" y="658" font-family="Gugi, cursive" font-size="12" fill="#a535e0" font-weight="bold">
+    🚀 11 Web Components • LitElement • TypeScript • Design Tokens • Fully Responsive
+  </text>
+</svg>
