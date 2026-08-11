@@ -12,7 +12,7 @@ export const myProjects = [
     link: 'https://menesesminigames.carlosmeneses.dev/',
     projectType: 'WebApp Moderna',
   },
-    {
+  {
     title: 'Agnostic D.S.',
     description: 'Biblioteca de componentes UI con Monorepo.',
     techStack: ['LitElement', 'TypeScript', 'Monorepo (pnpm)', 'SASS'],
