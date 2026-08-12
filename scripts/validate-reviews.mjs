@@ -37,7 +37,7 @@ async function checkWithAI(text) {
         messages: [
           {
             role: 'system',
-            content: "Eres un moderador de contenido automático. Tu tarea es analizar el comentario del usuario y responder ÚNICAMENTE con la palabra 'APROBADO' o 'RECHAZADO'. APROBADO: El comentario es aceptable (incluyendo saludos, frases cortas, neutras, críticas constructivas o pruebas como 'test'). RECHAZADO: El comentario contiene claramente insultos explícitos, lenguaje ofensivo, discriminación, spam evidente (links maliciosos) o incitación al odio. Ante la duda o si el comentario es inofensivo, responde APROBADO. No des explicaciones, solo la palabra."
+            content: 'Eres un moderador de contenido extremadamente permisivo. Tu tarea es analizar el texto (que puede estar en cualquier idioma) y responder ÚNICAMENTE con la palabra "APROBADO" o "RECHAZADO". APROBADO: El texto es inofensivo (pruebas, saludos, preguntas, comentarios técnicos, críticas constructivas o texto normal). RECHAZADO: SOLO si contiene insultos explícitos, incitación al odio, o enlaces de spam malicioso. Ante la mínima duda, responde APROBADO. No des explicaciones, solo la palabra.'
           },
           {
             role: 'user',
@@ -70,15 +70,16 @@ async function checkWithAI(text) {
 async function validateIssue(issue) {
   console.log(`Evaluando issue #${issue.number}: "${issue.title}"`);
   
-  const body = issue.body || '';
+  // Unimos el título y el cuerpo para no perder información en caso de que escriban todo en el título
+  const fullText = `${issue.title} \n ${issue.body || ''}`.trim();
   
-  // 1. Que no esté vacío o sea muy corto
-  if (body.trim().length < 5) {
-    return { valid: false, reason: 'El comentario es demasiado corto o está vacío.' };
+  // 1. Que no esté vacío o sea muy corto (bajamos tolerancia a 3 chars para permitir "yes", "ok", etc)
+  if (fullText.length < 3) {
+    return { valid: false, reason: 'El comentario está vacío o es demasiado corto.' };
   }
   
-  // 2. Validación semántica mediante Inteligencia Artificial
-  const isApprovedByAI = await checkWithAI(body);
+  // 2. Validación semántica mediante Inteligencia Artificial enviando TODO el texto
+  const isApprovedByAI = await checkWithAI(fullText);
   if (!isApprovedByAI) {
     return { valid: false, reason: 'El comentario ha sido clasificado como ofensivo o inapropiado por nuestro sistema de moderación automática (IA).' };
   }
