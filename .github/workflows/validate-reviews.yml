@@ -1,0 +1,31 @@
+name: Validate Reviews
+
+on:
+  schedule:
+    # Se ejecuta cada 15 minutos (puedes ajustarlo)
+    - cron: '*/15 * * * *'
+  # Permite ejecución manual desde GitHub
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Agent Validation
+        env:
+          # Debe ser un Personal Access Token con permisos sobre el repo 'feedback'
+          GITHUB_TOKEN: ${{ secrets.PAT_FEEDBACK }} 
+          # Deploy Hook de Vercel
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          # API Key para validación con Inteligencia Artificial
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/validate-reviews.mjs
