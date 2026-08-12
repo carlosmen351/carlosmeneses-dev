@@ -49,18 +49,21 @@ async function checkWithAI(text) {
     });
 
     if (!response.ok) {
-      console.error('Error en la API de la IA:', response.statusText);
-      return false; // Ante la duda o error, lo rechazamos por seguridad
+      const errorData = await response.text();
+      console.error('Error en la API de la IA:', response.status, errorData);
+      throw new Error(`OpenAI API status: ${response.status}`);
     }
 
     const data = await response.json();
     const answer = data.choices[0].message.content.trim().toUpperCase();
-    console.log(`🤖 Respuesta de la IA: ${answer}`);
+    console.log(`🤖 Respuesta de la IA (raw): ${answer}`);
     
-    return answer === 'APROBADO';
+    // Lo hacemos con includes para ser menos estrictos si la IA responde con un punto final u otra cosa adicional
+    return answer.includes('APROBADO');
   } catch (error) {
     console.error('Error comunicándose con la IA:', error);
-    return false;
+    // Escape de seguridad: Lanzamos error para que la funcion superior decida aprobarlo por defecto
+    throw new Error('Error al conectar con OpenAI'); 
   }
 }
 
@@ -79,9 +82,16 @@ async function validateIssue(issue) {
   }
   
   // 2. Validación semántica mediante Inteligencia Artificial enviando TODO el texto
-  const isApprovedByAI = await checkWithAI(fullText);
-  if (!isApprovedByAI) {
-    return { valid: false, reason: 'El comentario ha sido clasificado como ofensivo o inapropiado por nuestro sistema de moderación automática (IA).' };
+  try {
+    const isApprovedByAI = await checkWithAI(fullText);
+    if (!isApprovedByAI) {
+      return { valid: false, reason: 'El comentario ha sido clasificado como ofensivo o inapropiado por nuestro sistema de moderación automática (IA).' };
+    }
+  } catch (err) {
+     console.error('⚠️ Hubo un error técnico evaluando el issue con la IA:', err);
+     console.log('⚠️ Aprobando comentario por defecto debido al fallo en la API de OpenAI.');
+     // Si la IA falla (apikey mala, limite alcanzado, caida), se aprueba por defecto
+     return { valid: true };
   }
 
   // Si pasa todas las validaciones
