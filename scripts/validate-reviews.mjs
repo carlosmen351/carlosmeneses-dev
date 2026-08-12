@@ -37,7 +37,7 @@ async function checkWithAI(text) {
         messages: [
           {
             role: 'system',
-            content: 'Eres un moderador de contenido automático. Tu tarea es analizar el comentario del usuario y responder ÚNICAMENTE con la palabra "APROBADO" si el comentario es respetuoso, constructivo o normal. Responde ÚNICAMENTE con "RECHAZADO" si contiene insultos, lenguaje ofensivo, discriminación, incitación al odio, spam o es altamente inapropiado. No des explicaciones.'
+            content: "Eres un moderador de contenido automático. Tu tarea es analizar el comentario del usuario y responder ÚNICAMENTE con la palabra 'APROBADO' o 'RECHAZADO'. APROBADO: El comentario es aceptable (incluyendo saludos, frases cortas, neutras, críticas constructivas o pruebas como 'test'). RECHAZADO: El comentario contiene claramente insultos explícitos, lenguaje ofensivo, discriminación, spam evidente (links maliciosos) o incitación al odio. Ante la duda o si el comentario es inofensivo, responde APROBADO. No des explicaciones, solo la palabra."
           },
           {
             role: 'user',

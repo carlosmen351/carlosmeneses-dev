@@ -2,9 +2,8 @@ name: Validate Reviews
 
 on:
   schedule:
-    # Se ejecuta cada 15 minutos (puedes ajustarlo)
-    - cron: '*/15 * * * *'
-  # Permite ejecución manual desde GitHub
+  - cron: '0 0 * * *'
+    # Permite ejecución manual desde GitHub
   workflow_dispatch:
 
 jobs:
