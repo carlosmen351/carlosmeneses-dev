@@ -175,8 +175,8 @@ const Home = () => {
         <AnimatedSection variants={sectionVariants}>
           <div id="proyectos">
             <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.projects.title')}</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {myProjects.map((project) => (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {myProjects.slice(0, 3).map((project) => (
                 <motion.div variants={itemVariants} key={project.title}>
                   <ProjectCard {...project} />
                 </motion.div>

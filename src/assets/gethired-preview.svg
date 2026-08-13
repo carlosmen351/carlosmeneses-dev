@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#0f172a"/>
+  <rect x="100" y="40" width="200" height="220" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="200" cy="85" r="24" fill="#3b82f6"/>
+  <path d="M 194 80 L 200 92 L 212 75" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="135" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f8fafc" text-anchor="middle">2FA Login</text>
+  <rect x="130" y="155" width="140" height="20" rx="4" fill="#334155"/>
+  <rect x="130" y="185" width="140" height="20" rx="4" fill="#334155"/>
+  <rect x="130" y="215" width="140" height="28" rx="6" fill="#3b82f6"/>
+  <text x="200" y="234" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Sign In</text>
+</svg>
