@@ -78,9 +78,8 @@ const Navbar = () => {
           <span className="text-xl font-bold text-text">{t('navbar.name')}</span>
         </Link>
 
-                {/* Desktop Navigation */}
+                        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-8 text-primary">
-          <li><NavItem to="/">{t('navbar.home')}</NavItem></li>
           <li><NavItem to="/projects">{t('navbar.projects')}</NavItem></li>
           <li><NavItem to="/blog">{t('navbar.blog')}</NavItem></li>
           <li><NavItem to="/contacto">{t('navbar.contact')}</NavItem></li>
