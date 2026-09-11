@@ -1,0 +1,149 @@
+{
+  "navbar": {
+    "seo": {
+      "title": "Carlos Meneses - Fullstack Developer | Node.js & React",
+      "description": "Portfolio of Carlos Meneses, Fullstack Developer specializing in React, Node.js, relational databases SQL, Next.js, and AI automation. Discover my fullstack projects."
+    },
+    "name": "Carlos Meneses",
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cv": "CV"
+  },
+  "footer": {
+    "copyright": "© {{year}} Carlos Meneses. All rights reserved.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter/X"
+  },
+  "home": {
+    "hero": {
+      "name": "Carlos Meneses",
+      "typewriter": [
+        "Fullstack Developer",
+        "Node.js & SQL Expert",
+        "AI Agent Automation",
+        "Next.js / React Specialist",
+        "System Architect"
+      ],
+      "description": "I design and build robust end-to-end applications, combining high-performance user interfaces with scalable backend microservices, SQL databases, and custom AI agent workflow automations.",
+      "viewWork": "View My Work",
+      "getInTouch": "Get in Touch"
+    },
+    "seo": {
+      "title": "Carlos Meneses - Fullstack Developer | React, Node.js & SQL",
+      "description": "Portfolio of Carlos Meneses, Fullstack Developer specializing in React, Node.js, Next.js, SQL databases, and AI Agent workflows."
+    },
+    "about": {
+      "title": "About Me",
+      "description": "I'm a Fullstack Developer with an extensive background in creating fast, scalable, and user-centered complete systems. I specialize in crafting robust backends using Node.js, Express, and NestJS, coupled with design and optimization of relational databases (PostgreSQL, MySQL, SQL Server) and seamless integration with modern frontend ecosystems like React and Next.js.\n\nMy approach bridges the gap between clean code, system architecture, and cutting-edge intelligence: I specialize in designing and engineering custom AI Agents, LLM orchestration, and smart workflow automations that eliminate manual tasks and elevate business capabilities.\n\nI thrive on building scalable, modular architectures, optimizing query performance, and deploying bulletproof Cloud applications. Collaborative, communicative, and technically versatile, I focus on delivering end-to-end solutions that solve complex real-world problems with maximum quality."
+    },
+    "projects_seo": {
+      "title": "Carlos Meneses Projects - Fullstack & AI Developer",
+      "description": "Discover Carlos Meneses' fullstack and backend development projects, including web applications, relational databases, Next.js setups, and AI automations."
+    },
+    "skills": {
+      "title": "My Skills & Expertise",
+      "list": [
+        { "name": "Node.js" },
+        { "name": "Next.js" },
+        { "name": "SQL & DBs" },
+        { "name": "AI Agents & Automation" },
+        { "name": "Supabase" },
+        { "name": "Vercel" },
+        { "name": "React" },
+        { "name": "JavaScript" },
+        { "name": "Git" },
+        { "name": "SASS" },
+        { "name": "Linux" },
+        { "name": "GitHub" }
+      ]
+    },
+    "projects": {
+      "title": "My Projects",
+      "viewAll": "View All Projects"
+    }
+  },
+  "projects": {
+    "list": {
+      "logistics": {
+        "desc": "Modern platform for managing, quoting, and tracking international transport and logistics services.",
+        "type": "Enterprise Web"
+      },
+      "minigames": {
+        "desc": "Website with interactive games (web/mobile).",
+        "type": "Modern WebApp"
+      },
+      "agnostic": {
+        "desc": "UI component library built with Monorepo.",
+        "type": "Corporate Web"
+      },
+      "calc": {
+        "desc": "Financial tool for budgeting and investment calculations.",
+        "type": "Lightweight Web"
+      },
+      "todo": {
+        "desc": "Interactive duties and to-do list.",
+        "type": "WebApp"
+      },
+      "landingPlatzi": {
+        "desc": "Landing page to learn and integrate CSS preprocessors with SASS.",
+        "type": "Semantic Web"
+      },
+      "gethired": {
+        "desc": "Job platform simulator with login system and two-factor verification (2FA).",
+        "type": "Web App"
+      },
+      "avocados": {
+        "desc": "Interactive avocado e-commerce consuming a local REST API and reCAPTCHA security.",
+        "type": "Virtual Store"
+      },
+      "bootstrap": {
+        "desc": "Modern landing page structured and stylized using Bootstrap 5.",
+        "type": "Responsive Web"
+      },
+      "batatabit": {
+        "desc": "Cryptocurrency app with responsive design with a Mobile-First approach.",
+        "type": "Responsive Design"
+      }
+    }
+  },
+  "projectsPage": {
+    "seo": {
+      "title": "Carlos Meneses Projects - Frontend Developer",
+      "description": "Discover Carlos Meneses' frontend development projects, including web applications, UI components, and modern technology experiments."
+    },
+    "title": "All Projects",
+    "subtitle": "A collection of my work and experiments."
+  },
+  "contactPage": {
+    "seo": {
+      "title": "Contact - Carlos Meneses",
+      "description": "Get in touch with Carlos Meneses for collaborations, inquiries, or just to say hello. Frontend developer available for new projects."
+    },
+    "title": "Let's Talk",
+    "subtitle": "Have a project in mind, want to collaborate, or just want to chat? Choose the most convenient way to connect with me. I usually respond within 24 hours!",
+    "formTitle": "Send me a message",
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "messageLabel": "Message",
+    "submitButton": "Send Message",
+    "successMessage": "Thank you for your message!",
+    "errorMessage": "An error occurred while sending the message",
+    "infoTitle": "Contact Information",
+    "infoSubtitle": "Feel free to reach out directly through any of these platforms.",
+    "phone": "Phone / WhatsApp",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Mexico",
+    "socialTitle": "Connect on Social Media"
+  },
+  "blogPage": {
+    "seo": {
+      "title": "Carlos Meneses Blog - Frontend Development Articles",
+      "description": "Read Carlos Meneses' latest articles on frontend development, React, UI/UX, web performance, and experiences in the tech industry."
+    },
+    "title": "My Blog"
+  }
+}

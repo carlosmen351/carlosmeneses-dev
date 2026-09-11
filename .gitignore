@@ -31,3 +31,6 @@ dist-ssr
 
 eslint.config.js
 .config.md
+generate_qr_tech.py
+BRANDING.md
+carlosmeneses_qr_tech.png

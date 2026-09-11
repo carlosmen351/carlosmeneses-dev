@@ -1,9 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const MotionDiv = lazy(() => import('framer-motion').then(mod => ({ default: mod.motion.div })));
 
 const ProjectCard = ({ title, description, techStack, link, image }) => {
+  const { t } = useTranslation();
   // Simplified tech stack styling for the new glassmorphism theme
   const getTechStackClasses = () => {
     // A base style for all tags that fits the dark/glassmorphism aesthetic
@@ -33,7 +35,7 @@ const ProjectCard = ({ title, description, techStack, link, image }) => {
           <div className="p-4 h-2/5 flex flex-col justify-between">
             <div>
               <h3 className="text-xl font-bold truncate text-text">{title}</h3>
-              <p className="mt-1 text-sm text-text/80">{description}</p>
+              <p className="mt-1 text-sm text-text/80">{t(description)}</p>
             </div>
             <div className="flex flex-wrap gap-2 mt-2">
               {techStack.slice(0, 3).map((tech) => (

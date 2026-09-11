@@ -8,7 +8,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'es',
+    fallbackLng: 'en',
+    lng: localStorage.getItem('i18nextLng') || 'en', // Forzar inglés por defecto
     debug: true,
     interpolation: {
       escapeValue: false, 

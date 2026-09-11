@@ -1,8 +1,8 @@
 {
-  "navbar": {
+    "navbar": {
     "seo": {
-      "title": "Carlos Meneses - Desarrollador Frontend | UI/UX",
-      "description": "Portafolio de Carlos Meneses, desarrollador frontend especializado en React, UI/UX y rendimiento web. Explora mis proyectos, blog y servicios."
+      "title": "Carlos Meneses - Desarrollador Fullstack | Node.js & React",
+      "description": "Portafolio de Carlos Meneses, desarrollador fullstack especializado en React, Node.js, bases de datos relacionales SQL, Next.js y automatizaciones con IA. Explora mis proyectos fullstack."
     },
     "name": "Carlos Meneses",
     "home": "Home",
@@ -17,44 +17,45 @@
     "linkedin": "LinkedIn",
     "twitter": "Twitter/X"
   },
-  "home": {
+        "home": {
     "hero": {
       "name": "Carlos Meneses",
       "typewriter": [
-        "Frontend Developer",
-        "UI/UX Enthusiast",
-        "Creative Coder",
-        "Problem Solver"
+        "Desarrollador Fullstack",
+        "Experto en Node.js y SQL",
+        "Automatización con Agentes de IA",
+        "Especialista en Next.js / React",
+        "Arquitecto de Software"
       ],
-      "description": "I build intuitive, engaging, and accessible web experiences with a focus on modern technologies.",
-      "viewWork": "View My Work",
-      "getInTouch": "Get in Touch"
+      "description": "Diseño y construyo aplicaciones completas y robustas de extremo a extremo, combinando interfaces de usuario de alto rendimiento con backends escalables, bases de datos SQL y flujos de trabajo inteligentes automatizados con agentes de IA.",
+      "viewWork": "Ver mi trabajo",
+      "getInTouch": "Contacto"
     },
     "seo": {
-      "title": "Carlos Meneses - Desarrollador Frontend | UI/UX",
-      "description": "Portafolio de Carlos Meneses, desarrollador frontend especializado en React, UI/UX y rendimiento web. Explora mis proyectos, blog y servicios."
+      "title": "Carlos Meneses - Desarrollador Fullstack | React, Node.js & SQL",
+      "description": "Portafolio de Carlos Meneses, desarrollador Fullstack especializado en React, Node.js, Next.js, bases de datos SQL y flujos de trabajo con agentes de IA."
     },
     "about": {
-      "title": "About Me",
-      "description": "I'm a frontend developer passionate about creating clean, fast, and user-centered interfaces. I specialize in HTML, CSS, JavaScript, and modern frameworks like React, always striving to optimize performance and accessibility.\n\nMy approach goes beyond code: I'm interested in building digital experiences that connect with people and bring real business value. I've worked on projects where attention to detail and the ability to creatively solve problems made a difference.\n\nI'm motivated to learn and experiment with new technologies, maintaining a modular and scalable environment. Additionally, I enjoy collaborating in multidisciplinary teams, where communication and clarity are as important as technical skill."
+      "title": "Acerca de Mí",
+      "description": "Soy un Desarrollador Fullstack con amplia trayectoria en la creación de sistemas completos, rápidos, seguros y centrados en el usuario. Me especializo en el desarrollo de backends robustos utilizando Node.js, Express y NestJS, junto con el diseño y optimización de bases de datos relacionales (PostgreSQL, MySQL, SQL Server) y una integración impecable con interfaces modernas como React y Next.js.\n\nMi enfoque conecta el código limpio, la arquitectura de sistemas y la inteligencia artificial de vanguardia: poseo experiencia configurando agentes de IA personalizados, orquestación de LLMs (Large Language Models) y automatizaciones inteligentes que eliminan procesos manuales y potencian el valor de negocio de las empresas.\n\nMe apasiona estructurar arquitecturas modulares, optimizar consultas de bases de datos complejas y desplegar aplicaciones seguras en la nube. Con un enfoque colaborativo y versatilidad técnica, me enfoco en entregar soluciones de software sólidas que resuelven problemas reales con la máxima calidad."
     },
     "projects_seo": {
-      "title": "Proyectos de Carlos Meneses - Desarrollador Frontend",
-      "description": "Descubre los proyectos de desarrollo frontend de Carlos Meneses, incluyendo aplicaciones web, componentes UI y experimentos con tecnologías modernas."
+      "title": "Proyectos de Carlos Meneses - Desarrollador Fullstack e IA",
+      "description": "Descubre los proyectos de desarrollo fullstack de Carlos Meneses, incluyendo backends con Node.js, bases de datos relacionales SQL, implementaciones con Next.js y automatizaciones de IA."
     },
     "skills": {
-      "title": "My Skills",
+      "title": "Mis Habilidades y Tecnologías",
       "list": [
-        { "name": "JavaScript" },
-        { "name": "React" },
         { "name": "Node.js" },
+        { "name": "Next.js" },
+        { "name": "SQL & DBs" },
+        { "name": "AI Agents & Automation" },
+        { "name": "Supabase" },
+        { "name": "Vercel" },
+        { "name": "React" },
+        { "name": "JavaScript" },
         { "name": "Git" },
         { "name": "SASS" },
-        { "name": "Cells" },
-        { "name": "Lit Element" },
-        { "name": "Web Components" },
-        { "name": "Jenkins" },
-        { "name": "Jira" },
         { "name": "Linux" },
         { "name": "GitHub" }
       ]
@@ -62,6 +63,50 @@
     "projects": {
       "title": "My Projects",
       "viewAll": "View All Projects"
+    }
+  },
+  "projects": {
+    "list": {
+      "logistics": {
+        "desc": "Plataforma moderna para la gestión, cotización y seguimiento de servicios de transporte internacional y logística.",
+        "type": "Web Empresarial"
+      },
+      "minigames": {
+        "desc": "Página web con juegos interactivos (web/móvil).",
+        "type": "WebApp Moderna"
+      },
+      "agnostic": {
+        "desc": "Biblioteca de componentes UI con Monorepo.",
+        "type": "Web Corporativa"
+      },
+      "calc": {
+        "desc": "Herramienta para presupuestos e inversión.",
+        "type": "Lightweight Web"
+      },
+      "todo": {
+        "desc": "Lista de deberes y tareas pendientes.",
+        "type": "WebApp"
+      },
+      "landingPlatzi": {
+        "desc": "Landing page para aprender e integrar preprocesadores de estilos con SASS.",
+        "type": "Web Semántica"
+      },
+      "gethired": {
+        "desc": "Simulador de plataforma de empleo con sistema de login y verificación en dos factores (2FA).",
+        "type": "Web App"
+      },
+      "avocados": {
+        "desc": "E-commerce interactivo de aguacates con consumo de API REST local y seguridad reCAPTCHA.",
+        "type": "Tienda Virtual"
+      },
+      "bootstrap": {
+        "desc": "Landing page moderna estructurada y estilizada con Bootstrap 5.",
+        "type": "Web Responsiva"
+      },
+      "batatabit": {
+        "desc": "App de criptomonedas con diseño responsivo con enfoque Mobile-First.",
+        "type": "Diseño Responsivo"
+      }
     }
   },
   "projectsPage": {
@@ -72,17 +117,27 @@
     "title": "All Projects",
     "subtitle": "A collection of my work and experiments."
   },
-  "contactPage": {
+    "contactPage": {
     "seo": {
       "title": "Contacto - Carlos Meneses",
       "description": "Ponte en contacto con Carlos Meneses para colaboraciones, consultas o simplemente para saludar. Desarrollador frontend disponible para nuevos proyectos."
     },
-    "title": "Let's Talk",
-    "emailLabel": "Your Email",
-    "messageLabel": "Message",
-    "submitButton": "Send Message",
-    "successMessage": "Thank you for your message!",
-    "errorMessage": "An error occurred while sending the message"
+    "title": "Hablemos",
+    "subtitle": "¿Tienes un proyecto en mente, deseas colaborar o simplemente platicar? Elige el canal que te resulte más cómodo para contactarme. ¡Suelo responder en menos de 24 horas!",
+    "formTitle": "Envíame un mensaje",
+    "nameLabel": "Tu Nombre",
+    "emailLabel": "Tu Correo",
+    "messageLabel": "Mensaje",
+    "submitButton": "Enviar Mensaje",
+    "successMessage": "¡Gracias por tu mensaje!",
+    "errorMessage": "Ocurrió un error al enviar el mensaje",
+    "infoTitle": "Información de Contacto",
+    "infoSubtitle": "No dudes en escribirme directamente a través de cualquiera de estos medios.",
+    "phone": "Teléfono / WhatsApp",
+    "email": "Correo Electrónico",
+    "location": "Ubicación",
+    "locationValue": "México",
+    "socialTitle": "Conéctate en Redes Sociales"
   },
   "blogPage": {
     "seo": {

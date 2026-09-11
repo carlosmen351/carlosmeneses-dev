@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaCode, FaSatellite, FaCoffee, FaJenkins, FaJira, FaLinux, FaGithub} from 'react-icons/fa';
+import { FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaCode, FaSatellite, FaCoffee, FaJenkins, FaJira, FaLinux, FaGithub, FaDatabase, FaBrain, FaServer, FaCloud } from 'react-icons/fa';
+import { SiNextdotjs, SiSupabase, SiVercel, SiPostgresql } from 'react-icons/si';
 import React, { Suspense, lazy } from 'react';
 import { SiSass } from 'react-icons/si';
 import { Link } from 'react-router-dom';
@@ -36,19 +37,24 @@ const Home = () => {
   const { t } = useTranslation();
   const typewriterWords = t('home.hero.typewriter', { returnObjects: true }) || [];
 
-  const skillIcons = {
-    'JavaScript': <FaJsSquare />,
-    'React': <FaReact />,
+    const skillIcons = {
     'Node.js': <FaNodeJs />,
+    'Next.js': <SiNextdotjs />,
+    'SQL & DBs': <FaDatabase />,
+    'AI Agents & Automation': <FaBrain />,
+    'Supabase': <SiSupabase />,
+    'Vercel': <SiVercel />,
+    'React': <FaReact />,
+    'JavaScript': <FaJsSquare />,
     'Git': <FaGitAlt />,
     'SASS': <SiSass />,
+    'Linux': <FaLinux />,
+    'GitHub': <FaGithub />,
     'Cells': <FaCode />,
     'Lit Element': <FaSatellite />,
     'Web Components': <FaCoffee />,
     'Jenkins': <FaJenkins />,
-    'Jira': <FaJira />,
-    'Linux': <FaLinux />,
-    'GitHub': <FaGithub />
+    'Jira': <FaJira />
   };
   const skills = t('home.skills.list', { returnObjects: true }) || [];
 
@@ -171,12 +177,12 @@ const Home = () => {
           </div>
         </AnimatedSection>
 
-        {/* Projects Section */}
+                {/* Projects Section */}
         <AnimatedSection variants={sectionVariants}>
           <div id="proyectos">
             <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('home.projects.title')}</h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {myProjects.slice(0, 3).map((project) => (
+              {myProjects(t).slice(0, 3).map((project) => (
                 <motion.div variants={itemVariants} key={project.title}>
                   <ProjectCard {...project} />
                 </motion.div>

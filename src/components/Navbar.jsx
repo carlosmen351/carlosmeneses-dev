@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import logoImage from '../assets/logoAzul.webp';
 import { motion, AnimatePresence } from 'framer-motion'; // Keep motion for GlowButton and direct usage
 import ThemeSwitcher from './ThemeSwitcher';
+import LanguageSwitcher from './LanguageSwitcher';
 import { FaHome, FaFolderOpen, FaPencilAlt, FaEnvelope, FaAddressCard } from 'react-icons/fa';
 
 const NavItem = ({ to, children, onClick, icon: Icon, isMobile = false, className = '' }) => {
@@ -77,13 +78,16 @@ const Navbar = () => {
           <span className="text-xl font-bold text-text">{t('navbar.name')}</span>
         </Link>
 
-        {/* Desktop Navigation */}
+                {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-8 text-primary">
           <li><NavItem to="/">{t('navbar.home')}</NavItem></li>
           <li><NavItem to="/projects">{t('navbar.projects')}</NavItem></li>
           <li><NavItem to="/blog">{t('navbar.blog')}</NavItem></li>
           <li><NavItem to="/contacto">{t('navbar.contact')}</NavItem></li>
           <li><NavItem to="/cv">{t('navbar.cv')}</NavItem></li>
+          <li>
+            <LanguageSwitcher />
+          </li>
           <li>
             <ThemeSwitcher />
           </li>
@@ -153,12 +157,18 @@ const Navbar = () => {
                   <motion.li variants={menuItemVariants}>
                     <NavItem to="/contacto" onClick={closeMenu} icon={FaEnvelope} isMobile={true} className="text-primary">{t('navbar.contact')}</NavItem>
                   </motion.li>
-                  <motion.li variants={menuItemVariants}>
+
+
+                                    <motion.li variants={menuItemVariants}>
                     <NavItem to="/cv" onClick={closeMenu} icon={FaAddressCard} isMobile={true} className="text-primary">{t('navbar.cv')}</NavItem>
                   </motion.li>
-                  <motion.li variants={menuItemVariants}>
+                  <motion.li variants={menuItemVariants} className="flex gap-4 items-center">
+                    <LanguageSwitcher />
                     <ThemeSwitcher />
                   </motion.li>
+
+
+
               </motion.ul>
             </motion.div>
           )}

@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
 import BlogPostPage from './pages/BlogPostPage';
@@ -25,9 +26,10 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/cv" element={<CVPage />} />
-        </Routes>
+                </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

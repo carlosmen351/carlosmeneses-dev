@@ -32,11 +32,11 @@ const ProjectsPage = () => {
         <p className="mt-4 text-lg text-text/80">{t('projectsPage.subtitle')}</p>
       </header>
 
-      <motion.div
+            <motion.div
         variants={containerVariants}
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
-        {myProjects.map((project) => (
+        {myProjects(t).map((project) => (
           <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } }} key={project.title}>
             <Suspense fallback={null}>
               <ProjectCard {...project} />
