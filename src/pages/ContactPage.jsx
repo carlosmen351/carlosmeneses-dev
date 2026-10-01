@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaUser, FaPaperPlane } from 'react-icons/fa';
 import LazyParticlesBackground from '../components/LazyParticlesBackground';
 import { contactParticlesOptions } from '../config/particles-contact-config';
+import SeoHead from '../components/SeoHead';
+import { PUBLIC_ROUTE_SEO, SITE_URL } from '../data/seo-routes';
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -64,7 +66,7 @@ const ContactPage = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaGithub className="w-5 h-5" />, url: 'https://github.com/carlosmen351', label: 'GitHub', color: 'hover:text-text hover:bg-slate-800' },
+    { icon: <FaGithub className="w-5 h-5" />, url: 'https://github.com/carlosmen351', label: 'GitHub', color: 'hover:text-white hover:bg-slate-800' },
     { icon: <FaLinkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/carlosmen351/', label: 'LinkedIn', color: 'hover:text-white hover:bg-[#0A66C2]' },
     { icon: <FaTwitter className="w-5 h-5" />, url: 'https://twitter.com/', label: 'Twitter/X', color: 'hover:text-white hover:bg-sky-500' }
   ];
@@ -83,6 +85,11 @@ const ContactPage = () => {
   };
 
   return (
+    <>
+    <SeoHead
+      {...PUBLIC_ROUTE_SEO.contact}
+      canonicalUrl={`${SITE_URL}${PUBLIC_ROUTE_SEO.contact.path}`}
+    />
     <section id="contacto" className="max-w-6xl mx-auto relative px-4 py-8">
       <LazyParticlesBackground options={contactParticlesOptions} className="z-0 pointer-events-none" />
       
@@ -93,7 +100,7 @@ const ContactPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">
           {t('contactPage.title')}
         </h1>
         <p className="mt-4 text-lg text-text/70 max-w-2xl mx-auto">
@@ -111,7 +118,7 @@ const ContactPage = () => {
         <motion.div variants={itemVariants} className="lg:col-span-5 space-y-8">
           <div>
             <h2 className="text-2xl font-bold text-text mb-2">{t('contactPage.infoTitle')}</h2>
-            <p className="text-sm text-text/60">{t('contactPage.infoSubtitle')}</p>
+            <p className="text-sm text-text/75">{t('contactPage.infoSubtitle')}</p>
           </div>
 
           {/* Cards de contacto */}
@@ -123,23 +130,23 @@ const ContactPage = () => {
                     href={method.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-slate-900/60 shadow-lg ${method.color}`}
+                    className={`flex items-center gap-4 p-4 rounded-xl border border-default bg-secondary/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-secondary/70 shadow-lg ${method.color}`}
                   >
-                    <div className="p-3 rounded-lg bg-slate-800/50">
+                    <div className="p-3 rounded-lg bg-secondary">
                       {method.icon}
                     </div>
                     <div>
-                      <h4 className="text-xs font-semibold text-text/50 uppercase tracking-wider">{method.title}</h4>
+                      <h4 className="text-xs font-semibold text-text/70 uppercase tracking-wider">{method.title}</h4>
                       <p className="text-sm font-bold text-text mt-1">{method.value}</p>
                     </div>
                   </a>
                 ) : (
-                  <div className={`flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-slate-900/40 backdrop-blur-md transition-all duration-300 shadow-lg ${method.color}`}>
-                    <div className="p-3 rounded-lg bg-slate-800/50">
+                  <div className={`flex items-center gap-4 p-4 rounded-xl border border-default bg-secondary/40 backdrop-blur-md transition-all duration-300 shadow-lg ${method.color}`}>
+                    <div className="p-3 rounded-lg bg-secondary">
                       {method.icon}
                     </div>
                     <div>
-                      <h4 className="text-xs font-semibold text-text/50 uppercase tracking-wider">{method.title}</h4>
+                      <h4 className="text-xs font-semibold text-text/70 uppercase tracking-wider">{method.title}</h4>
                       <p className="text-sm font-bold text-text mt-1">{method.value}</p>
                     </div>
                   </div>
@@ -149,7 +156,7 @@ const ContactPage = () => {
           </div>
 
           {/* Social Links */}
-          <div className="p-6 rounded-xl border border-white/5 bg-slate-900/20 backdrop-blur-sm">
+          <div className="p-6 rounded-xl border border-default bg-secondary/20 backdrop-blur-sm">
             <h3 className="text-sm font-semibold text-text/70 mb-4">{t('contactPage.socialTitle')}</h3>
             <div className="flex gap-4">
               {socialLinks.map((social, idx) => (
@@ -158,7 +165,7 @@ const ContactPage = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 rounded-full border border-white/10 bg-slate-900/50 text-text/70 transition-all duration-300 hover:scale-115 ${social.color}`}
+                  className={`p-3 rounded-full border border-default bg-background text-text transition-all duration-300 hover:scale-115 ${social.color}`}
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -180,13 +187,24 @@ const ContactPage = () => {
                 method="POST"
                 className="space-y-5"
               >
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="_gotcha">Deja este campo vacío</label>
+                  <input
+                    id="_gotcha"
+                    type="text"
+                    name="_gotcha"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 {/* Name Field */}
                 <div>
                   <label htmlFor="name" className="block text-xs font-bold text-text/70 uppercase tracking-wider mb-2">
                     {t('contactPage.nameLabel')}
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text/40">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text/70">
                       <FaUser className="w-4 h-4" />
                     </div>
                     <input 
@@ -195,7 +213,7 @@ const ContactPage = () => {
                       name="name" 
                       required 
                       placeholder="John Doe"
-                      className="block w-full bg-slate-900/20 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-text placeholder-text/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 animate-none"
+                      className="block w-full bg-background border border-default rounded-lg py-3 pl-10 pr-4 text-text placeholder:text-text/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 animate-none"
                     />
                   </div>
                 </div>
@@ -206,7 +224,7 @@ const ContactPage = () => {
                     {t('contactPage.emailLabel')}
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text/40">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text/70">
                       <FaEnvelope className="w-4 h-4" />
                     </div>
                     <input 
@@ -215,7 +233,7 @@ const ContactPage = () => {
                       name="email" 
                       required 
                       placeholder="john@example.com"
-                      className="block w-full bg-slate-900/20 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-text placeholder-text/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 animate-none"
+                      className="block w-full bg-background border border-default rounded-lg py-3 pl-10 pr-4 text-text placeholder:text-text/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 animate-none"
                     />
                   </div>
                 </div>
@@ -231,7 +249,7 @@ const ContactPage = () => {
                     rows="5" 
                     required 
                     placeholder={t('contactPage.messageLabel') + '...'}
-                    className="block w-full bg-slate-900/20 border border-white/10 rounded-lg py-3 px-4 text-text placeholder-text/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                    className="block w-full bg-background border border-default rounded-lg py-3 px-4 text-text placeholder:text-text/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                   ></textarea>
                 </div>
 
@@ -273,6 +291,7 @@ const ContactPage = () => {
         </motion.div>
       </motion.div>
     </section>
+    </>
   );
 };
 

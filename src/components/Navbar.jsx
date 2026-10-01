@@ -74,7 +74,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm py-4">
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoImage} alt="Logo" className="h-10 w-10 rounded-full" fetchpriority="high" loading="eager" />
+          <img src={logoImage} alt="Carlos Meneses" width="40" height="40" className="h-10 w-10 rounded-full" fetchpriority="high" loading="eager" />
           <span className="text-xl font-bold text-text">{t('navbar.name')}</span>
         </Link>
 
@@ -97,6 +97,8 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden z-50 text-text"
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
         >
           <AnimatePresence mode="wait">
             {isMenuOpen ? (
@@ -139,6 +141,7 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               <motion.ul
+                id="mobile-navigation"
                 className="flex flex-col items-end space-y-8 pt-20" // Align items to right, added pt-20
                 initial="hidden"
                 animate="visible"

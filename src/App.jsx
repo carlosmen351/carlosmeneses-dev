@@ -8,6 +8,7 @@ import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
 import ProjectsPage from './pages/Projects';
 import CVPage from './pages/CVPage';
+import NotFoundPage from './pages/NotFoundPage';
 import CustomCursor from './components/CustomCursor';
 import { useMediaQuery } from 'react-responsive';
 
@@ -26,7 +27,8 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/cv" element={<CVPage />} />
-                </Routes>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       <Footer />
       <WhatsAppButton />

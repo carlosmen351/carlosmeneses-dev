@@ -1,30 +1,33 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { DEFAULT_OG_IMAGE } from '../data/seo-routes';
 
-const SeoHead = ({ title, description, canonicalUrl, ogType = 'website', ogImage, lang = 'es' }) => {
+const SeoHead = ({ title, description, canonicalUrl, ogType = 'website', ogImage = DEFAULT_OG_IMAGE, noIndex = false, lang = 'es' }) => {
   const { i18n } = useTranslation();
-  const currentLang = i18n.language || lang;
+  const currentLang = i18n.resolvedLanguage?.split('-')[0] || i18n.language?.split('-')[0] || lang;
 
   return (
     <Helmet>
       <html lang={currentLang} />
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {noIndex && <meta name="robots" content="noindex, follow" />}
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
+      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:alt" content="Logo de Carlos Meneses" />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      {ogImage && <meta property="twitter:image" content={ogImage} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      {canonicalUrl && <meta name="twitter:url" content={canonicalUrl} />}
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
     </Helmet>
   );
 };

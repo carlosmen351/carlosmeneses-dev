@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="relative h-6 w-6 rounded-full flex items-center justify-center"> {/* Removed bg-secondary */}
+    <button onClick={toggleTheme} className="relative h-6 w-6 rounded-full flex items-center justify-center" aria-label={theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'}>
       <AnimatePresence mode="wait">
         {theme === 'dark' ? (
           <motion.div

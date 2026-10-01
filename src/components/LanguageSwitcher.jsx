@@ -14,7 +14,7 @@ const LanguageSwitcher = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="relative flex items-center justify-center font-bold text-sm tracking-wider px-3 py-1 rounded-md border border-primary/20 bg-slate-800/35 hover:bg-slate-800/60 hover:border-primary/50 text-text transition-all duration-300 min-w-[50px] overflow-hidden"
+      className="relative flex items-center justify-center font-bold text-sm tracking-wider px-3 py-1 rounded-md border border-default bg-secondary/70 hover:bg-secondary text-text transition-all duration-300 min-w-[50px] overflow-hidden"
       aria-label="Change Language"
     >
       <AnimatePresence mode="wait">

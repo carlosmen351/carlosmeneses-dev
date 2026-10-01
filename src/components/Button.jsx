@@ -6,7 +6,7 @@ const Button = ({ as: Component = 'button', variant = 'primary', children, ...re
 
   const variants = {
     primary: 'bg-primary text-background hover:bg-primary/90 focus:ring-primary',
-    secondary: 'bg-secondary text-text hover:bg-secondary/90 focus:ring-secondary',
+    secondary: 'bg-secondary text-text hover:bg-secondary/90 focus:ring-primary',
     tertiary: 'bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-background focus:ring-primary',
     quaternary: 'bg-accent text-background hover:bg-accent/90 focus:ring-accent',
   };

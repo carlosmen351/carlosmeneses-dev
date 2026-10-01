@@ -12,7 +12,7 @@ const ProjectButton = ({ to, children }) => {
       transition={{ type: "spring", stiffness: 300, damping: 10 }}
       className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-lg font-bold rounded-full group bg-gradient-to-br from-primary to-accent text-text dark:text-white focus:ring-4 focus:outline-none focus:ring-primary dark:focus:ring-accent"
     >
-      <span className="relative px-8 py-3 transition-all ease-in duration-75 bg-background rounded-full group-hover:bg-opacity-0 text-text dark:text-white">
+      <span className="relative px-8 py-3 transition-all ease-in duration-75 bg-background rounded-full text-text">
         {children}
       </span>
     </MotionLink>

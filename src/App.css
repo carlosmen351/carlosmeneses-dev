@@ -1,26 +1,8 @@
-* {
-  cursor: none;
-}
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  background: linear-gradient(-45deg, #2a2a2a, #2a2a2a, #1a1a1a, #2a2a2a);
-  background-size: 400% 400%;
-  animation: gradient-animation 15s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  background: var(--color-background);
 }
 
 .logo {

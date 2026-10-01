@@ -6,10 +6,10 @@
   :root {
     --color-text: #0D1117;
     --color-background: #F6F8FA;
-    --color-primary: #2F81F7;
+    --color-primary: #0550AE;
     --color-secondary: #D9DEE4;
-    --color-accent: #2DBA8D;
-    --color-border: #D9DEE4;
+    --color-accent: #116149;
+    --color-border: #6E7781;
   }
 
   .dark {
@@ -18,11 +18,15 @@
     --color-primary: #58A6FF;
     --color-secondary: #30363D;
     --color-accent: #39D39F;
-    --color-border: #30363D;
+    --color-border: #6E7681;
   }
 
   html, body {
     @apply font-body text-base text-text bg-background;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;

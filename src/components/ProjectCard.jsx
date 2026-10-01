@@ -4,31 +4,31 @@ import { useTranslation } from 'react-i18next';
 
 const MotionDiv = lazy(() => import('framer-motion').then(mod => ({ default: mod.motion.div })));
 
-const ProjectCard = ({ title, description, techStack, link, image }) => {
+const ProjectCard = ({ title, description, techStack, link, image, imageWidth, imageHeight }) => {
   const { t } = useTranslation();
   // Simplified tech stack styling for the new glassmorphism theme
   const getTechStackClasses = () => {
     // A base style for all tags that fits the dark/glassmorphism aesthetic
-    return 'bg-slate-800/50 text-text/70 border border-white/5';
+    return 'bg-background text-text border border-default';
   };
 
   return (
-    <Suspense fallback={<div className="h-96 rounded-2xl bg-slate-900/50" />}>
+    <Suspense fallback={<div className="h-96 rounded-2xl bg-secondary/30" />}>
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         whileHover={{ scale: 1.03, y: -5 }}
         className="group rounded-2xl h-96 overflow-hidden 
-                  bg-slate-900/50 backdrop-blur-md 
-                  border border-white/10 
+                  bg-secondary/30 backdrop-blur-md
+                  border border-default
                   hover:border-accent/50 transition-all duration-300
                   ring-1 ring-inset ring-white/10"
       >
         <Link to={link} className="block h-full w-full" target='_blank' rel='noopener noreferrer'>
           {/* Project Image Area */}
-          <div className="relative h-3/5 w-full border-b border-white/10">
-            <img src={image} alt={title} className="h-full w-full object-cover" />
+          <div className="relative h-3/5 w-full border-b border-default">
+            <img src={image} alt={`${title}: vista previa del proyecto`} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" className="h-full w-full object-cover" />
           </div>
           
           {/* Content Area */}

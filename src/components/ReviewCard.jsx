@@ -30,7 +30,10 @@ const ReviewCard = ({ review }) => {
             <img 
               src={user.avatar_url} 
               alt={`Avatar de ${user.login}`} 
+              width="48"
+              height="48"
               loading="lazy"
+              decoding="async"
               className="w-12 h-12 rounded-full mr-4 border-2 border-primary"
             />
           </a>
@@ -38,7 +41,10 @@ const ReviewCard = ({ review }) => {
           <img 
             src={user.avatar_url} 
             alt={`Avatar de ${user.login}`} 
+            width="48"
+            height="48"
             loading="lazy"
+            decoding="async"
             className="w-12 h-12 rounded-full mr-4 border-2 border-primary"
           />
         )}

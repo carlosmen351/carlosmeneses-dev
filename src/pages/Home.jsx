@@ -13,6 +13,7 @@ import { motion } from 'framer-motion'; // Keep motion for GlowButton and direct
 import SeoHead from '../components/SeoHead';
 import LazyParticlesBackground from '../components/LazyParticlesBackground'; // Changed import
 import { homeParticlesOptions } from '../config/particles-config';
+import { PUBLIC_ROUTE_SEO, SITE_URL, DEFAULT_OG_IMAGE } from '../data/seo-routes';
 
 const Typewriter = lazy(() => import('react-simple-typewriter').then(module => ({ default: module.Typewriter })));
 
@@ -89,8 +90,9 @@ const Home = () => {
       <SeoHead
         title={t('home.seo.title')}
         description={t('home.seo.description')}
-        canonicalUrl="https://carlosmeneses.dev/"
-        ogImage="https://carlosmeneses.dev/logoAzul.webp"
+        canonicalUrl={`${SITE_URL}${PUBLIC_ROUTE_SEO.home.path}`}
+        ogType={PUBLIC_ROUTE_SEO.home.ogType}
+        ogImage={DEFAULT_OG_IMAGE}
       />
     <div className="space-y-32 relative">
       <LazyParticlesBackground options={homeParticlesOptions} className="z-0" />

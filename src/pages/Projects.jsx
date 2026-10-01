@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { myProjects } from '../lib/projects';
 import LazyParticlesBackground from '../components/LazyParticlesBackground';
 import { projectsParticlesOptions } from '../config/particles-projects-config';
+import SeoHead from '../components/SeoHead';
+import { PUBLIC_ROUTE_SEO, SITE_URL } from '../data/seo-routes';
 const ProjectCard = lazy(() => import('../components/ProjectCard'));
 
 const ProjectsPage = () => {
@@ -20,6 +22,11 @@ const ProjectsPage = () => {
   };
 
   return (
+    <>
+    <SeoHead
+      {...PUBLIC_ROUTE_SEO.projects}
+      canonicalUrl={`${SITE_URL}${PUBLIC_ROUTE_SEO.projects.path}`}
+    />
     <motion.div
       variants={containerVariants}
       initial="hidden"
@@ -45,6 +52,7 @@ const ProjectsPage = () => {
         ))}
       </motion.div>
     </motion.div>
+    </>
   );
 };
 
