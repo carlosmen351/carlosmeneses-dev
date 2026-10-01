@@ -14,8 +14,7 @@
   "footer": {
     "copyright": "© {{year}} Carlos Meneses. All rights reserved.",
     "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "twitter": "Twitter/X"
+    "linkedin": "LinkedIn"
   },
   "home": {
     "hero": {
@@ -145,5 +144,89 @@
       "description": "Read Carlos Meneses' latest articles on frontend development, React, UI/UX, web performance, and experiences in the tech industry."
     },
     "title": "My Blog"
+  },
+  "cv": {
+    "educationConnector": "in",
+    "basics": {
+      "label": "Senior Frontend Developer",
+      "location": "Mexico City",
+      "summary": "Frontend engineer with strong experience building scalable, high-performance web applications. Specialized in the Web Components ecosystem and corporate libraries such as Cells and LitElement. Experienced in applying Clean Architecture to keep code maintainable and testable, with a focus on pixel-perfect interfaces, accessibility, and Core Web Vitals."
+    },
+    "sections": {
+      "experience": "Professional Experience",
+      "skills": "Skills",
+      "education": "Education"
+    },
+    "work": [
+      {
+        "company": "BBVA Colombia",
+        "position": "Senior Frontend Developer",
+        "startDate": "Apr 2022",
+        "endDate": "Present",
+        "highlights": [
+          "Provided technical leadership building frontend web components with the corporate Cells library and LitElement.",
+          "Designed platform-agnostic components with Cells and LitElement, reusing 90% of business logic between commercial web and the native app WebView.",
+          "Orchestrated two-way communication between web components and native APIs through a JavaScript bridge, keeping mobile experiences consistent.",
+          "Applied Clean Architecture patterns to decouple presentation from service logic and simplify complex authentication and transaction flows.",
+          "Automated unit tests with web-component-testing and monitored Core Web Vitals to maintain responsive experiences inside the native container."
+        ]
+      },
+      {
+        "company": "Minsait Mexico",
+        "position": "Senior Frontend Developer",
+        "startDate": "Apr 2020",
+        "endDate": "Apr 2022",
+        "highlights": [
+          "Developed React.js and Vite single-page applications, improving load times and technical SEO.",
+          "Integrated RESTful APIs and managed complex application state.",
+          "Built responsive, accessible interfaces following UX/UI best practices.",
+          "Collaborated in cross-functional teams and managed projects with Jira."
+        ]
+      },
+      {
+        "company": "Freelance",
+        "position": "Senior Frontend Developer",
+        "startDate": "Jun 2016",
+        "endDate": "Apr 2020",
+        "highlights": [
+          "Built custom web applications for clients in e-commerce, education, and entertainment.",
+          "Delivered scalable frontend solutions with modern technologies including React.js and Tailwind CSS.",
+          "Improved performance and user experience through advanced frontend techniques.",
+          "Managed projects end to end, from planning through delivery."
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Frontend",
+        "keywords": ["Web Components", "Lit", "Cells", "React", "Next.js", "Tailwind", "SASS", "CSS", "JavaScript", "Node.js"]
+      },
+      {
+        "name": "DevOps & Tools",
+        "keywords": ["Jenkins", "Artifactory", "Bitbucket", "Docker", "Git", "Jira", "SonarQube", "Samuel", "AWS", "Firebase", "Jest"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "University T.E.S.E.",
+        "area": "Computer Systems Engineering",
+        "studyType": "Graduate"
+      },
+      {
+        "institution": "Platzi Master",
+        "area": "Software and Web Development",
+        "studyType": "Specialization"
+      },
+      {
+        "institution": "CISCO Networking Academy",
+        "area": "Networking and Communications",
+        "studyType": "Certification"
+      },
+      {
+        "institution": "Electronica Digital Mexico",
+        "area": "Microcontrollers and Embedded Systems",
+        "studyType": "Certification"
+      }
+    ]
   }
 }

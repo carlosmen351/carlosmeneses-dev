@@ -33,6 +33,16 @@ In the project directory, you can run:
 - `npm run build`: Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 - `npm run preview`: Serves the production build locally to preview it before deploying.
 
+## Agent Customizations
+
+Shared GitHub Copilot customizations live in [`.github/`](.github/README.md):
+
+- General repository conventions: `.github/instructions/`.
+- Select **Frontend Developer** from `.github/agents/` for UI, accessibility, and translations.
+- Select **Release Engineering** for build, GitHub Actions, Vercel, and release work.
+- Project skills are catalogued in `.github/skills/`; the frontend design skill keeps its license in the same folder.
+- `AGENTS.md`, `.agents/`, `.continue/`, and `opencode.json` may exist as local workspace files and are not shared through Git.
+
 ## Customizing the Theme
 
 The theme is configured using CSS variables in `src/index.css`. You can modify the colors for both the light and dark themes by changing the values of the CSS variables.

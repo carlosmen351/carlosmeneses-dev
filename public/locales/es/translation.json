@@ -14,8 +14,7 @@
   "footer": {
     "copyright": "© {{year}} Carlos Meneses. All rights reserved.",
     "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "twitter": "Twitter/X"
+    "linkedin": "LinkedIn"
   },
         "home": {
     "hero": {
@@ -145,5 +144,89 @@
       "description": "Lee los últimos artículos de Carlos Meneses sobre desarrollo frontend, React, UI/UX, rendimiento web y experiencias en la industria tecnológica."
     },
     "title": "My Blog"
+  },
+  "cv": {
+    "educationConnector": "en",
+    "basics": {
+      "label": "Desarrollador Frontend Senior",
+      "location": "Ciudad de México",
+      "summary": "Ingeniero Frontend con sólida experiencia en el desarrollo de aplicaciones web escalables y de alto rendimiento. Especializado en el ecosistema de Web Components y librerías corporativas como Cells y LitElement. Experto en aplicar Clean Architecture para mantener código escalable y testeable, con enfoque en interfaces Pixel Perfect, accesibilidad y optimización de Core Web Vitals."
+    },
+    "sections": {
+      "experience": "Experiencia Profesional",
+      "skills": "Habilidades",
+      "education": "Educación"
+    },
+    "work": [
+      {
+        "company": "BBVA Colombia",
+        "position": "Desarrollador Frontend Senior",
+        "startDate": "Abr 2022",
+        "endDate": "Actualidad",
+        "highlights": [
+          "Liderazgo técnico en el desarrollo de componentes web frontend con la librería corporativa Cells y LitElement.",
+          "Diseño de componentes agnósticos de plataforma con Cells y LitElement, reutilizando el 90% de la lógica de negocio entre la web comercial y el WebView de la app nativa.",
+          "Orquestación de la comunicación bidireccional entre componentes web y APIs nativas mediante un puente JavaScript, manteniendo una experiencia móvil consistente.",
+          "Aplicación de patrones Clean Architecture para desacoplar la presentación de la lógica de servicios y simplificar flujos complejos de autenticación y transacciones.",
+          "Automatización de pruebas unitarias con web-component-testing y monitoreo de Core Web Vitals para mantener tiempos de respuesta óptimos en el contenedor nativo."
+        ]
+      },
+      {
+        "company": "Minsait México",
+        "position": "Desarrollador Frontend Senior",
+        "startDate": "Abr 2020",
+        "endDate": "Abr 2022",
+        "highlights": [
+          "Desarrollo de aplicaciones de página única con React.js y Vite, optimizando tiempos de carga y SEO técnico.",
+          "Integración de APIs RESTful y gestión de estado complejo.",
+          "Implementación de interfaces responsivas y accesibles siguiendo buenas prácticas de UX/UI.",
+          "Colaboración en equipos multidisciplinarios y gestión de proyectos con Jira."
+        ]
+      },
+      {
+        "company": "Freelance",
+        "position": "Desarrollador Frontend Senior",
+        "startDate": "Jun 2016",
+        "endDate": "Abr 2020",
+        "highlights": [
+          "Desarrollo de aplicaciones web personalizadas para clientes de comercio electrónico, educación y entretenimiento.",
+          "Implementación de soluciones frontend escalables con tecnologías modernas, incluyendo React.js y Tailwind CSS.",
+          "Optimización del rendimiento y la experiencia de usuario mediante técnicas avanzadas de frontend.",
+          "Gestión integral de proyectos, desde la planificación hasta la entrega."
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Frontend",
+        "keywords": ["Web Components", "Lit", "Cells", "React", "Next.js", "Tailwind", "SASS", "CSS", "JavaScript", "Node.js"]
+      },
+      {
+        "name": "DevOps y herramientas",
+        "keywords": ["Jenkins", "Artifactory", "Bitbucket", "Docker", "Git", "Jira", "SonarQube", "Samuel", "AWS", "Firebase", "Jest"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "University T.E.S.E.",
+        "area": "Ingeniería en Sistemas Computacionales",
+        "studyType": "Graduado"
+      },
+      {
+        "institution": "Platzi Master",
+        "area": "Desarrollo de Software y Web",
+        "studyType": "Especialización"
+      },
+      {
+        "institution": "CISCO Networking Academy",
+        "area": "Redes y Comunicaciones",
+        "studyType": "Certificación"
+      },
+      {
+        "institution": "Electronica Digital Mexico",
+        "area": "Microcontroladores y Sistemas Embebidos",
+        "studyType": "Certificación"
+      }
+    ]
   }
 }

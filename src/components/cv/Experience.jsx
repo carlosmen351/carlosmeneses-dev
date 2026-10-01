@@ -1,11 +1,12 @@
-import { cvData } from '../../data/cv-data';
+import { useTranslation } from 'react-i18next';
 
 const Experience = () => {
-  const { work } = cvData;
+  const { t } = useTranslation();
+  const work = t('cv.work', { returnObjects: true });
 
   return (
     <section className="my-8">
-      <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Experiencia Profesional</h2>
+      <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">{t('cv.sections.experience')}</h2>
       {work.map((job, index) => (
         <div key={index} className="mb-6">
           <h3 className="text-xl font-semibold text-text">{job.position}</h3>

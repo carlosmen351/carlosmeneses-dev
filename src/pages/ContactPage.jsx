@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaUser, FaPaperPlane } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaUser, FaPaperPlane } from 'react-icons/fa';
 import LazyParticlesBackground from '../components/LazyParticlesBackground';
 import { contactParticlesOptions } from '../config/particles-contact-config';
 import SeoHead from '../components/SeoHead';
@@ -68,7 +68,6 @@ const ContactPage = () => {
   const socialLinks = [
     { icon: <FaGithub className="w-5 h-5" />, url: 'https://github.com/carlosmen351', label: 'GitHub', color: 'hover:text-white hover:bg-slate-800' },
     { icon: <FaLinkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/carlosmen351/', label: 'LinkedIn', color: 'hover:text-white hover:bg-[#0A66C2]' },
-    { icon: <FaTwitter className="w-5 h-5" />, url: 'https://twitter.com/', label: 'Twitter/X', color: 'hover:text-white hover:bg-sky-500' }
   ];
 
   const containerVariants = {

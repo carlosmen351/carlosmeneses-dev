@@ -8,14 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 opencode.json
 AGENTS.md
-.agents/skills/frontend-design/LICENSE.txt
-.agents/skills/frontend-design/SKILL.md
-
-
-
 .vercel
 .env*
-.continue
+.agents/
+.continue/
+.github/
+!.github/
+.github/*
+!.github/README.md
+!.github/agents/
+!.github/instructions/
+!.github/skills/
+
 
 
 node_modules
@@ -40,4 +44,3 @@ eslint.config.js
 generate_qr_tech.py
 BRANDING.md
 carlosmeneses_qr_tech.png
-skills-lock.json
